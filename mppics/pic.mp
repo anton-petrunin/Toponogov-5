@@ -1635,7 +1635,7 @@ z.x2=(1,-.6)*u;
 z.x3=(-1.2,-.7)*u;
 z.p=(-.2,-.3)*u;
 z.s=.6[z.x1,z.x2];
-z.t=(1,.2)*u;
+z.t=(1,-.2)*u;
 
 p0=ellipseFFT(z.s, z.p, z.x1, z.t);
 p1=ellipseFFP(z.s, z.x1, z.s);
