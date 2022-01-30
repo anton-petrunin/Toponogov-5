@@ -1,0 +1,184 @@
+\usepackage{amssymb, amsfonts, amsmath, amsthm}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage[colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black%,
+]{hyperref}
+\usepackage[normalem]{ulem}%дабы зачёркивать
+\usepackage{cancel}%дабы зачёркивать
+\usepackage{array}%для таблиц
+\usepackage{longtable}%для таблиц
+
+\usepackage{epsfig,lpic,wrapfig}
+\usepackage{bm}%makes better bold fornt in math
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[russian,
+%slovak,
+german,
+%french,
+english]{babel}
+
+\usepackage[
+sorting=debug,
+bibencoding=auto,
+backend=biber,
+maxnames=10,
+%babel=other,
+autolang=other,
+doi=false,
+url=false,
+style=numeric-comp,
+isbn=false]{biblatex}
+\usepackage{csquotes}
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryBibitem{\clearlist{note}}
+\renewbibmacro{in:}{}
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{library.bib}
+
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+\DeclareFieldFormat{pages}{#1}
+
+\newcommand{\nofootnote}[1]{%
+\begingroup\def\thefootnote{}\footnotetext{#1}\endgroup}
+
+
+
+% Fix latex
+\def\smallskip{\vskip\smallskipamount}
+\def\medskip{\vskip\medskipamount}
+\def\bigskip{\vskip\bigskipamount}
+
+%RUSSIAN STYLE
+\def\emptyset{\varnothing}
+\def\cosh{\operatorname{ch}}
+\def\sinh{\operatorname{sh}}
+\def\tan{\operatorname{tg}}
+\def\limsup{\varlimsup}
+\def\liminf{\varliminf}
+
+%MY STYLE
+\def\parit#1{\medskip\noindent{\it #1}}
+\def\parbf#1{\medskip\noindent{\bf #1}}
+\def\qeds{\qed\par\medskip}
+\def\qedsf{\vskip-6mm\qeds}
+
+%THEOREM
+\newcounter{thm}[section]
+\renewcommand{\thethm}{\thesection.\arabic{thm}}
+\def\claim#1{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf\boldmath \thesection.\arabic{thm}. #1.}
+\it\ %\ignorespaces
+}
+\def\endclaim{
+\par\medskip}
+\newenvironment{thm}{\claim}{\endclaim}
+
+\def\noi{\noindent}%  
+
+\def\penta{\text{\rm Pent}}
+\def\quadra{\text{\rm Quad}}
+
+\def\EE{\mathbb{E}}%
+\def\DD{\mathbb{D}}%
+\def\FF{\mathbb{F}}%
+\def\II{\mathbb{I}}
+\def\JJ{\mathbb{J}}
+\def\HH{\mathbb H}
+\def\LL{\mathbb{L}}
+\def\MM{\mathbb{M}}% 
+\def\SS{\mathbb S}
+\def\LSS{\mathrm{LSS}}
+\def\NN{\mathbb{N}}%  
+\def\QQ{\mathbb{Q}}% 
+\def\RR{\mathbb{R}}%  
+\def\TT{\mathbb{T}}% 
+\def\CC{\mathbb{C}}
+\def\ZZ{\mathbb{Z}}% 
+\def\T{\mathrm{T}}
+\def\RP{\RR\mathrm{P}}
+\def\CP{\CC\mathrm{P}}
+\def\SO{\mathrm{SO}}
+\def\T{\mathrm{T}}
+\def\spc#1{\mathcal{#1}}
+\def\rG{R_{\scriptscriptstyle{120}}}
+\def\oG{O_{\scriptscriptstyle{120}}}
+
+\def\~{\tilde}
+\def\eps{\varepsilon}
+\def\phi{\varphi}
+\def\theta{\vartheta}
+
+\def\ge{\geqslant}
+\def\le{\leqslant}
+
+\def\i{\subset}
+\def\l{\!\left}
+\def\r{\right}
+\def\<{\langle}
+\def\>{\rangle}
+
+\def\CAT{\mathrm{CAT}}
+\def\CBB{\mathrm{CBB}}
+\def\GHto{\buildrel \mathrm{GH} \over \longrightarrow}
+\def\df{\mathrel{:=}}
+\def\Flat{\mathrm{Flat}}
+\def\ae{\buildrel \hbox{\tiny\it a.e.} \over{=\joinrel=}}
+\def\acts{\curvearrowright}%{\mathrel{\reflectbox{$\righttoleftarrow$}}}%{\lefttorightarrow}%{\curvearrowright}
+
+
+
+\def\:{\colon}
+\newcommand*{\set}[2]{\l\{\,\l.{#1}\vphantom{#2}\,\r|\,{#2}\,\r\}}
+
+
+\def\diam{\mathop{\rm diam}\nolimits}
+\def\dim{\mathop{\rm dim}\nolimits}
+\def\length{\mathop{\rm length}\nolimits}
+\def\pack{\mathrm{pack}}
+\def\Tor{\text{\rm Tor\,}}
+\def\id{\mathop{\rm id}\nolimits}
+\def\Im{\mathop{\rm Im}\nolimits}
+
+\newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}
+\newcommand*{\angk}[3]{\tilde\measuredangle(#1\,{}^{#2}_{#3}\hspace{-0.2ex})}
+\newcommand*{\ang}[3]{\measuredangle(#1\,{}^{#2}_{#3}\hspace{-0.2ex})}
+
+\newcommand*{\z}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
+\let\oldcdot\cdot
+\def\cdot{{\hskip0.5pt\z\oldcdot\hskip0.5pt}}
+
+\newcommand{\asterism}{\smash{%
+\raisebox{-.5ex}{%
+\setlength{\tabcolsep}{.5pt}%
+\begin{tabular}{@{}cc@{}}%
+\multicolumn2c*\\[-1.7ex]*&*%
+\end{tabular}}}}
+
+\hyphenation{qua-si-geo-de-sic qua-si-geo-de-sics Alex-an-drov half-space geo-de-sic re-pa-ra-met-ri-za-tion}
+
+
+%LIST STILES
+\renewcommand{\@listI}{%
+\leftmargin=25pt
+\rightmargin=0pt
+\labelsep=5pt
+\labelwidth=20pt
+\itemindent=0pt
+\listparindent=0pt
+\topsep=0pt plus 1pt
+\partopsep=\topsep
+\parsep=\topsep
+\itemsep=\topsep}
+%ITEMIZE-first order sign
+\renewcommand{\labelitemi}{$\mathsurround=0pt \diamond$}
+\renewcommand{\labelitemii}{$\mathsurround=0pt \circ$}
