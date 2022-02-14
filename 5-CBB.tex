@@ -44,7 +44,7 @@ We give an if-and-only-if condition on a five-point metric spaces that admit emb
 \section{Introduction}
 
 Toponogov theorem provides an if-and-only-if condition on a metric on four-point space that admits an isometric embedding into a nonnegatively curved Riemannian manifold.
-The only-if part is the actual Toponogov theorem and the if part follows from a result of Abraham Wald \cite[\S 7]{wald}.
+The only-if part is proved by Toponogov, and the if part follows from a result of Abraham Wald \cite[\S 7]{wald}.
 
 In this note, we give an analogous condition for the five-point space.
 Its only-if part is well known, but the if part is new.
@@ -52,17 +52,15 @@ The formulation uses the so-called Lang--Schroeder--Sturm inequality \cite{lang-
 
 Consider an $(n+1)$-point array $(p,x_1,\dots x_n)$ in a metric space $X$ with nonnegative curvature.
 We say that the array satisfies Lang--Schroeder--Sturm inequality (briefly,  $\LSS(n)$)
-if 
-\[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j\ge 0\]
-for any nonnegative values $\lambda_1,\dots,\lambda_n$;
-here $a_{ij}=|p-x_i|_X^2+|p-x_j|_X^2-|x_i-x_j|_A^2$
+if for any nonnegative values $\lambda_1,\dots,\lambda_n$ we have
+\[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j\ge 0,\]
+where $a_{ij}=|p-x_i|_X^2+|p-x_j|_X^2-|x_i-x_j|_A^2$
 and we denote by $|p-q|_X$ the distance between points in $X$.
 
-Recall that any point array in a nonnegatively curved Alexandrov space (in particular in any complete nonnegatively curved Riemannian manifold) meets the Lang--Schroeder--Sturm inequality.
+Recall that any point array in a  complete nonnegatively curved Riemannian manifold (and, more generally, in any nonnegatively curved Alexandrov space) meets the Lang--Schroeder--Sturm inequality.
 In particular, 
-given a finite metric space $F$, the
-Lang--Schroeder--Sturm inequalities for all relabeling of points in $F$
-gives a necessary condition for the existence of isometric embedding of $F$ into an Alexandrov space with nonnegative curvature.
+the Lang--Schroeder--Sturm inequalities for all relabelings of points in a finite metric space $F$
+gives a necessary condition for the existence of isometric embedding of $F$ into a complete Riemannian manifold with nonnegative curvature.
 In this note, we show that this condition is sufficient if $F$ has at most 5 points.
 
 \begin{thm}{Theorem}\label{thm:main}
@@ -70,19 +68,11 @@ A five-point metric space $F$ admits an isometric embedding into a complete nonn
 if and only if all Lang--Schroeder--Sturm inequalities hold in $F$.
 \end{thm}
 
-Since Lang--Schroeder--Sturm inequalities provides a necessary condition,
-to prove the theorem we need to construct a complete nonnegatively curved Riemannian manifold that contains an isometric copy of any given 5-point space that meets all Lang--Schroeder--Sturm inequalities.
+We already know that Lang--Schroeder--Sturm inequalities are necessary.
+It remains to construct a complete nonnegatively curved Riemannian manifold that contains an isometric copy of any given 5-point space satisfying the assumptions.
 We first construct an Alexandrov space with this property and then smooth it slightly keeping the required property.
 
-Our theorem provides an affirmative answer to Question~6.2 in \cite{lebedeva-petrunin}.
-For 6-point metric spaces a direct analog of the theorem does not hold,
-but Question~6.3 in \cite{lebedeva-petrunin} might be an appropriate analog.
-
-An analogous problem for 5-point sets in nonpositively curved spaces was solved by Tetsu Toyoda \cite{toyoda}; another solution is given in \cite{lebedeva-petrunin}.
-The 6 point case is open;
-Question 6.1 in \cite{lebedeva-petrunin} might contain an answer.
-
-Our proof uses brute force search that was originally done on a computer.
+Our proof uses brute force search that was originally done on computer.
 We want to thank Arseniy Akopyan and Alexander Gil who helped us with programming.
 We present a hand-made proof that was found later.
 Our paper is inspired by an unpublished note of Vladimir Zolotov and the first author;
@@ -91,9 +81,9 @@ the results from this note are discussed briefly in the last section.
 
 \section{LSS(\textit{n}) and (\textit{n}+1)-comparison}
 
-The (\textit{n}+1)-comparison is another condition that holds for any $(n+1)$-point array in a nonnegatively Alexandrov space $A$ \cite{alexander2019alexandrov}.
-It says that given a point array $p,x_1,\dots,x_n$ in $A$ 
-there is an array $\tilde p,\tilde x_1,\dots,\tilde x_n$ in a Hilbert space such that 
+The (\textit{n}+1)-comparison is another condition that holds for any $(n+1)$-point array in  Alexandrov spaces \cite{alexander2019alexandrov}.
+It says that given a point array $p,x_1,\dots,x_n$ in a nonnegatively curved Alexandrov space $A$ 
+there is an array $\tilde p,\tilde x_1,\dots,\tilde x_n$ in a Hilbert space $\HH$ such that 
 \[
 |\tilde p-\tilde x_j|_{\HH}=|p-x_i|_{A}
 \quad
@@ -129,20 +119,18 @@ Consider a configuration of points $\tilde p,\tilde x_1,\dots,\tilde x_4\in \HH$
 \[
 |\tilde p-\tilde x_j|_{\HH}=|p-x_i|_{A}.
 \]
-and
+and has minimal value
 \[
-s=\sum_{i<j}\phi(|\tilde x_i-\tilde x_j|_{\HH}- |x_i-x_j|_{A})
+s=\sum_{i<j}\phi(|\tilde x_i-\tilde x_j|_{\HH}- |x_i-x_j|_{A}).
 \]
-takes its minimal value.
-
 Note that $s\ge0$;
 if $s=0$, then we get the required configuration.
 
 Suppose $s>0$.
-Consider the graph $\Gamma$ with vertices 4 vertices labeled by $\tilde x_1,\tilde x_2,\tilde x_3,\tilde x_4$ such that 
+Consider the graph $\Gamma$ with 4 vertices labeled by $\tilde x_1,\tilde x_2,\tilde x_3,\tilde x_4$ such that 
 $(\tilde x_i,\tilde x_j)$ is an edge if and only if $|\tilde x_i-\tilde x_j|_{\HH}<|x_i-x_j|_{A}$.
 By the triangle inequality, $\Gamma$ contains no end-vertices.
-Therefore it is isomorphic to one of the following graphs.
+Therefore it is isomorphic to one of four graphs on the diagram.
 
 \begin{figure}[ht!]
 \centering
@@ -153,7 +141,8 @@ Further, we will assume that $\tilde p=0$.
 Note that any point $\tilde x_i$ cannot lie in an open half-space with all its
 adjacent points.
 Indeed, if it would be the case, then we could slightly move this
-vertex increasing the distances to all its adjacent vertexes and keeping the conditions on the other distances.
+vertex increasing the distances to all its adjacent vertexes;
+so the value $s$ will decrease which is impossible.
 
 In the 6-edge case, $0$ lies in the convex hull of $\{\tilde x_1,\tilde x_2,\tilde x_3,\tilde x_4\}$.
 In particular, we can write $0$ as a sum $\lambda_1\cdot \tilde x_1+\dots+\lambda_4\cdot\tilde x_4$ with $\lambda_i\ge0$.
@@ -162,7 +151,7 @@ The latter contradicts $\LSS(4)$.
 Similarly, in the 5- and 3-edge cases, we can assume that $\tilde x_1\tilde x_2\tilde x_3$ is a 3-cycle of $\Gamma$.
 In this case, we can write $0$ as a sum $\lambda_1\cdot \tilde x_1+\lambda_2\cdot\tilde x_2+\lambda_3\cdot\tilde x_3$ with $\lambda_i\ge0$ and arrive at a contradiction.
 
-Finally, the 4-edge graph (that is, the 4-cycle) cannot occur.
+Finally, the 4-edge graph (the 4-cycle) cannot occur.
 In this case, we may think that $\tilde x_1,\tilde x_2,\tilde x_3,\tilde x_4$ is the 4-cycle.
 Note that the points $\tilde x_1,\tilde x_2,\tilde x_3,\tilde x_4$  lie in one plane so that the direction of $\tilde x_1$ is opposite to $\tilde x_3$,
 and the direction of $\tilde x_2$ is opposite to $\tilde x_4$.
@@ -174,7 +163,7 @@ the pair $\tilde x_2$, $\tilde x_4$  slightly down, decreases~$s$ --- a contradi
 \section{Associated form}
 
 Let us recall a construction from \cite{petrunin-2017}.
-Let $\bm{x}=(x_1,\dots,x_n)$ be a point array in a metric space.
+Let $\bm{x}=(x_1,\dots,x_n)$ be a point array in a metric space $X$.
 
 Choose a simplex $\triangle$ in $\RR^{n-1}$; for example, we can take the standard simplex with the first $(n-1)$ of its vertices $v_1,\dots,v_n$ form the standard basis on $\RR^{n-1}$,
  and $v_n=0$.
@@ -183,7 +172,7 @@ Consider a quadratic form $W_{\bm{x}}$ on $\RR^{n-1}$ that is uniquely defined b
 \[W_{\bm{x}}(v_i-v_j)=|x_i-x_j|^2_X\] 
 for all $i$ and $j$.
 The constructed quadratic form $W_{\bm{x}}$ will be called
-the \emph{form associated to the point array $\bm{x}$}.
+the form \emph{associated} to the point array $\bm{x}$.
 The following claim is self-evident:
 
 \begin{thm}{Claim}\label{clm:W>=0}
@@ -198,17 +187,26 @@ the three triangle inequalities for the distances between $x_1$, $x_2$, and $x_3
 For an $n$-point array, it implies that $W_{\bm{x}}(v)\ge 0$ for any vector $v$ in a plane spanned by a triple of vertices of $\triangle$.
 
 \parbf{Lang--Schroeder--Sturm inequalities.}
-Consider an $n$-point array $\bm{x}$.
-Assume $W_{\bm{x}}(w)<0$ for some $w\in\RR^{n-1}$.
-Denote by $L_w$ the line spanned by $w$.
-Consider the projection along $L_w$ from $\RR^{n-1}$ to the quotient space $\RR^{n-2}\z=\RR^{n-1}/L_w$.
+Given nonzero vector $w\in\RR^{n-1}$, denote by $L_w$ the line spanned by $w$.
+Consider the cone $K_n\subset \RR^{n-1}$ that contains $0$ and all vectors $w$ such that $L_w$ connects a point on the opposite facet with its opposite vertex in $\triangle$.
+(Note that $K_3=\RR^2$, but for $n\ge 4$ the cone $K_n$ is a proper subset of $\RR^{n-1}$.)
+
 The following claim is a reformulation Sturm--Lang--Shroeder inequalities for all relabeling of $\bm{x}$:
 
 \begin{thm}{Claim}\label{clm:W(w)<0}
 Let $\bm{x}=(x_1,\dots,x_n)$ be an $n$-point array in an Alexandrov space with nonnegative curvature.
-Suppose that $W_{\bm{x}}(w)<0$ for some nonzero vector $w\in\RR^{n-1}$.
-Then the projection of each vertex of $\triangle$ to the quotient space $\RR^{n-1}/L_w$ does not lie in the projection of its opposite facet.
+Then $W_{\bm{x}}(w)\ge0$ for any $w\in K_n$.
 \end{thm}
+
+We say that an array $(p,x_1,\dots,x_n)$ is \emph{tense} with marked point $p$ if configuration described by the $(n+1)$-comparison with center at $p$ is unique up to congruence and isometric to the original array.
+Note that if $w\in K_{n+1}$ is ..., 
+
+
+Assume $n=5$ and $W_{\bm{x}}(w)=0$ for some $w\in K_5$.
+Then we have certain rigidity for the configurations described by the $(4+1)$-comparison.
+Namely, a part of one of these configurations is uniquely defined up to congruence.
+Such set might contain 3, 4 or 5 points.
+
 
 If $W_{\bm{x}}(w)\le0$, then the same construction can be applied, but the projection of a vertex, say $v_1$, of $\triangle$ can lie in the interior of the projection of its opposite facet;
 in this case, we say that the array $\bm{x}$ is \emph{tense}.
@@ -247,8 +245,8 @@ This way we can think that $\mathcal{A}_5$ and $\mathcal{B}_5$ are convex cones 
 The set $\mathcal{B}_5$ is a cone so it does not have extremal points except the origin.
 The origin corresponds to degenerate metric with all zero distances.
 But $\mathcal{B}_5$ is a cone over a convex compact set $\mathcal{B}_5'$ in the sphere $\mathbb{S}^9\subset \RR^{10}$.
-The extremal points of $\mathcal{B}_5'$ correspond to extremal half-lines of $\mathcal{B}_5$;
-metrics on extremal half-lines will be called \emph{extremal}.
+The extremal points of $\mathcal{B}_5'$ correspond to extremal rays of $\mathcal{B}_5$;
+metrics on extremal rays will be called \emph{extremal}.
 Note that if an extremal metric $\rho$ lies in the interior of a line segment between metrics $\rho'$ and $\rho''$ in $\mathcal{B}_5$, then both metrics $\rho'$ and $\rho''$ are proportional to $\rho$.
 
 Since Lang--Schroeder--Sturm inequalities are necessary for the existance of isometric embedding into nonnegatively curved Alexandrov space,
@@ -484,8 +482,9 @@ one of the following three tense-set configurations:
 
 \end{thm}
 
-In the following proof we use only small part of the classification in Lemma~\ref{lem:key},
-but the proof of this \emph{small part} takes nearly as long as the complete classification.
+In the following proof we use only small part of the classification in Lemma~\ref{lem:key}.
+Namely we use that if it is note the first case in the lemma, then there are two tense sets with shared middle point.  
+However the proof of this \emph{small part} takes nearly as long as the complete classification.
 
 \begin{wrapfigure}{r}{20mm}
 \vskip-0mm
@@ -684,7 +683,7 @@ By \ref{clm:(4+1)=LSS(4)}, we can apply (4+1) comparison for the array $x$, $v_1
 &
 |\tilde w_1-\tilde w_2|_{\HH}&\ge |w_1-w_2|_{A}.
 \end{align*}
-The triangle inequality implies equality in the last two inequalities;
+The triangle inequality together with the conditions described by the diagram, implies equality in the last two inequalities;
 that is, each of points $(\tilde v_1,\tilde x,\tilde v_2)$ and $(\tilde w_1,\tilde x,\tilde w_2)$ lies on one line.
 In particular, the whole configuration lies in $\RR^2$.
 
@@ -731,10 +730,10 @@ In addition, by construction, we get $(\asterism)$ at $\tilde v_2$.
 
 Similarly we construct the remaining 6 points.
 
-\parit{Final step.} It remains to modify $L$ into a plane with smooth Riemannian metric.
+\parit{Final step.} It remains to modify $L$ into a plane with a smooth Riemannian metric.
 First note that $L$ is a convex subset of a plane with at most 4 singular points.
 Further, the geodesics between the 5-point subset in $L$ do not visit these singular points.
-Therefore slight smoothing around singularities does not crates a problem.
+Therefore a slight smoothing around singularities does not creates a problem.
 \qeds
 
 
@@ -753,10 +752,25 @@ The latter contradicts that $F$ is extreme.
 Suppose that two tense triples share two points.
 All possible 4 configurations are shown on the diagram; they will be referred as $C$, $O$, $P$, and $Y$ respectively.
 Observe that in the configurations $P$ and $Y$, the set $\{a,b,c,d\}$ with marked point $b$ must be tense.
-That is, if $P$ or $Y$ appear in $F$, then $F$ has a 4-point tense set which contradicts the assumptions.
-It follows that $P$ and $Y$ cannot appear in our configuration.
+Indeed, in the $P$-case the 4-point space is isometric to a 4-point subset on a line with order $a,d,b,c$.
+In the $Y$-case, $\angk{b}{a}{c}=\angk{b}{d}{c}=\pi$, and the comparison implies that $\angk{b}{d}{a}=0$.
+Without loss of generality we may assume $|a-b|\ge |d-b|$;
+in this case, the 4-point space is also isometric to a 4-point subset on a line with order $a,d,b,c$.
+That is, if $P$ or $Y$ appear in $F$, then $F$ has a 4-point tense set.
+The latter contradicts the assumptions; so $P$ and $Y$ cannot appear in our configuration.
 
 Each tense triple gives at most two linear restrictions on the quadratic form.
+Indeed, a tense triple corresponds to a vector $v$ in the plane of some 2-face $T$ of $\triangle$ such that 
+$W(v)=0$, where $W$ denotes the associated form.
+Denote by $v'$ another vector in the plane of $T$ that is not parallel to $v$.
+The space of forms $U$ such that $U(v)=0$ and $v'U(v)=$ describes a subspace $S_v$ of $\RR^10$ of codimension at most 2.
+Note that for any form $U\in S_v$ for all $t$ sufficiently closed to 0, the forms $W+t\cdot U$ satisfy all $\LSS(4)$ conditions for vectors in a neightborhood of $v$.
+Therefore if we have only four vectors $v_1$, $v_2$, $v_3$, $v_4$, then $S_{v_1}\cap S_{v_2}\cap S_{v_3}\cap S_{v_4}$ has dimension at least 2.
+So we can choose a form $U$ in this subset that is not proportional to $W$.
+Then $W+tU$ satisfy the inequalities for $v$ near $v_1,v_2,v_3,v_4$ for all small $t$.
+Further for any vector away from the set $\{v_1,v_2,v_3,v_4\}$ the inequality is strict.
+Therfore again it is satisfied for all near by forms, in particular for $W+tU$.
+
 The space of quadratic forms on $\RR^4$ is 10-dimensional.
 Therefore, in order to be on an extremal ray, the quadratic form has to have at least 9 linear restrictions.
 Hence $F$ contains at least 5 tense triples.
@@ -1174,6 +1188,14 @@ $D_4$
 \qeds
 
 \section{Final remarks}
+
+Our theorem provides an affirmative answer to Question~6.2 in \cite{lebedeva-petrunin}.
+For 6-point metric spaces a direct analog of the theorem does not hold,
+but Question~6.3 in \cite{lebedeva-petrunin} might be an appropriate analog.
+
+An analogous problem for 5-point sets in nonpositively curved spaces was solved by Tetsu Toyoda \cite{toyoda}; another solution is given in \cite{lebedeva-petrunin}.
+The 6 point case is open;
+Question 6.1 in \cite{lebedeva-petrunin} might contain an answer.
 
 {
 
