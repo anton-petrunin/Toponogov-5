@@ -54,7 +54,7 @@ Consider an $(n+1)$-point array $(p,x_1,\dots x_n)$ in a metric space $X$ with n
 We say that the array satisfies Lang--Schroeder--Sturm inequality (briefly,  $\LSS(n)$)
 if for any nonnegative values $\lambda_1,\dots,\lambda_n$ we have
 \[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j\ge 0,\]
-where $a_{ij}=|p-x_i|_X^2+|p-x_j|_X^2-|x_i-x_j|_A^2$
+where $a_{ij}=|p-x_i|_X^2+|p-x_j|_X^2-|x_i-x_j|_X^2$
 and we denote by $|p-q|_X$ the distance between points in $X$.
 
 Recall that any point array in a  complete nonnegatively curved Riemannian manifold (and, more generally, in any nonnegatively curved Alexandrov space) meets the Lang--Schroeder--Sturm inequality.
@@ -92,6 +92,7 @@ there is an array $\tilde p,\tilde x_1,\dots,\tilde x_n$ in a Hilbert space $\HH
 |\tilde x_i-\tilde x_j|_{\HH}\ge |x_i-x_j|_{A}.
 \]
 for all $i$ and $j$.
+The point $p$ will be called \emph{central} for this configuration.
 
 For general metric spaces, the (\textit{n}+1)-comparison implies the $\LSS(n)$.
 For $n\ge 5$ the converse does not hold \cite[Section 8]{lebedeva-petrunin-zolotov}.
@@ -198,8 +199,44 @@ Let $\bm{x}=(x_1,\dots,x_n)$ be an $n$-point array in an Alexandrov space with n
 Then $W_{\bm{x}}(w)\ge0$ for any $w\in K_n$.
 \end{thm}
 
-We say that an array $(p,x_1,\dots,x_n)$ is \emph{tense} with marked point $p$ if configuration described by the $(n+1)$-comparison with center at $p$ is unique up to congruence and isometric to the original array.
-Note that if $w\in K_{n+1}$ is ..., 
+\section{Tense arrays}
+
+Suppose $n\le 5$.
+Assume $(x_1,\dots,x_n)$ is an array of points with a metric that satifies all Lang--Shroeder--Sturm inequalities.
+By Claim~\ref{clm:(4+1)=LSS(4)}, we have a comparison configuration 
+$(\tilde x_1,\dots,\tilde x_n)$ with central point $x_1$.
+
+We say that an array $(x_1,\dots,x_n)$ is \emph{tense} with central point $x_1$ if the configuration $(\tilde x_1,\dots,\tilde x_n)$ is unique up to congruence and isometric to the original array.
+
+\begin{thm}{Claim-Definition}
+Assume $(x_1,\dots,x_n)$ is an array of points with a metric that satifies all Lang--Shroeder--Sturm inequalities an $n\le 5$.
+Suppose we have equality in $\LSS(n-1)$ for some positive $\lambda$-parameters;
+that is, if for some positive values $\lambda_1,\dots,\lambda_n$ we have
+\[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j= 0,\]
+where $a_{ij}=|x_1-x_i|^2+|x_1-x_j|^2-|x_i-x_j|^2$, for $i,j>1$
+Then the array $(x_1,\dots,x_n)$ is tight; such tense arrays will be called \emph{nondegenerate}.
+\end{thm}
+
+\parit{Proof.}
+By Claim~\ref{clm:(4+1)=LSS(4)}, we have a comparison configuration $(\tilde x_1,\dots,\tilde x_n)$ with central point $x_1$.
+Suppose that we have a strict inequality $|\tilde x_i-\tilde x_j|>| x_i- x_j|$ for some $i,j>1$.
+Set $\tilde a_{ij}=|\tilde x_1-\tilde x_i|^2+|\tilde x_1-\tilde x_j|^2-|\tilde x_i-\tilde x_j|^2$ for all $i,j>1$.
+Note that 
+\begin{align*}
+0&=\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j>
+\\
+&>\sum_{i,j}\tilde a_{i,j}\cdot \lambda_i\cdot\lambda_j= 
+\\
+&=\left|\sum_i\lambda_i\cdot (\tilde x_i-\tilde x_1)\right|^2\ge 
+\\
+&\ge0,
+\end{align*}
+--- a contradiction.
+\qeds
+
+
+???
+
 
 
 Assume $n=5$ and $W_{\bm{x}}(w)=0$ for some $w\in K_5$.
