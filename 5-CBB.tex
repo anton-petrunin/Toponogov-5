@@ -166,8 +166,7 @@ the pair $\tilde x_2$, $\tilde x_4$  slightly down, decreases~$s$ --- a contradi
 Let us recall a construction from \cite{petrunin-2017}.
 Let $\bm{x}=(x_1,\dots,x_n)$ be a point array in a metric space $X$.
 
-Choose a simplex $\triangle$ in $\RR^{n-1}$; for example, we can take the standard simplex with the first $(n-1)$ of its vertices $v_1,\dots,v_n$ form the standard basis on $\RR^{n-1}$,
- and $v_n=0$.
+Choose a simplex $\triangle$ in $\RR^{n-1}$; for example, we can take the standard simplex with the first $(n-1)$ of its vertices $v_1,\dots,v_n$ form the standard basis on $\RR^{n-1}$, and $v_n=0$.
 
 Consider a quadratic form $W_{\bm{x}}$ on $\RR^{n-1}$ that is uniquely defined by
 \[W_{\bm{x}}(v_i-v_j)=|x_i-x_j|^2_X\] 
@@ -201,41 +200,87 @@ Then $W_{\bm{x}}(w)\ge0$ for any $w\in K_n$.
 
 \section{Tense arrays}
 
-Suppose $n\le 5$.
-Assume $(x_1,\dots,x_n)$ is an array of points with a metric that satifies all Lang--Shroeder--Sturm inequalities.
-By Claim~\ref{clm:(4+1)=LSS(4)}, we have a comparison configuration 
-$(\tilde x_1,\dots,\tilde x_n)$ with central point $x_1$.
+Assume $(p,x_1,\dots,x_n)$ is an array of points with a metric that satifies the Lang--Shroeder--Sturm inequality.
+Suppose $n\le 4$; by Claim~\ref{clm:(4+1)=LSS(4)}, we have a comparison configuration 
+$(\tilde p,\tilde x_1,\dots,\tilde x_n)$ with central point $p$.
 
-We say that an array $(x_1,\dots,x_n)$ is \emph{tense} with central point $x_1$ if the configuration $(\tilde x_1,\dots,\tilde x_n)$ is unique up to congruence and isometric to the original array.
+We say that an array $(p,x_1,\dots,x_n)$ is \emph{tense} with central point $p$ if the comparison configuration $(\tilde p,\tilde x_1,\dots,\tilde x_n)$ is unique up to congruence and isometric to the original array.
 
-\begin{thm}{Claim-Definition}
-Assume $(x_1,\dots,x_n)$ is an array of points with a metric that satifies all Lang--Shroeder--Sturm inequalities an $n\le 5$.
-Suppose we have equality in $\LSS(n-1)$ for some positive $\lambda$-parameters;
-that is, if for some positive values $\lambda_1,\dots,\lambda_n$ we have
+Note that if $(p,x_1,\dots,x_n)$ is \emph{tense}, then in its comparison configuration $\tilde p$ lies in the convex hull of the remaining points $\tilde x_1,\dots,\tilde x_n$.
+In particular, 
+\[\sum_i\lambda_i\cdot (\tilde x_i-\tilde p)=0 \leqno({*})\]
+for some coefficients $\lambda_1,\dots, \lambda_n$ such that all of them nonnegative and some of them are positive.
+If all we can choose all positive $\lambda_i$ in $({*})$, then we say that $(p,x_1,\dots,x_n)$ is nondegenerate tense array.
+The following statement gives a description of nondegenerate tense arrays.
+
+\begin{thm}{Claim}
+Assume $n\le 4$ and $(p,x_1,\dots,x_n)$ is an array of points with a metric that satisfies $\LSS(n)$ .
+Suppose we have equality in $\LSS(n)$ for some positive $\lambda$-parameters;
+that is, for some positive values $\lambda_1,\dots,\lambda_n$ we have
 \[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j= 0,\]
-where $a_{ij}=|x_1-x_i|^2+|x_1-x_j|^2-|x_i-x_j|^2$, for $i,j>1$
-Then the array $(x_1,\dots,x_n)$ is tight; such tense arrays will be called \emph{nondegenerate}.
+where $a_{ij}=|p-x_i|^2+|p-x_j|^2-|p-x_j|^2$.
+Then the array $(p,x_1,\dots,x_n)$ is tense and nondegenerate.
 \end{thm}
 
 \parit{Proof.}
-By Claim~\ref{clm:(4+1)=LSS(4)}, we have a comparison configuration $(\tilde x_1,\dots,\tilde x_n)$ with central point $x_1$.
-Suppose that we have a strict inequality $|\tilde x_i-\tilde x_j|>| x_i- x_j|$ for some $i,j>1$.
-Set $\tilde a_{ij}=|\tilde x_1-\tilde x_i|^2+|\tilde x_1-\tilde x_j|^2-|\tilde x_i-\tilde x_j|^2$ for all $i,j>1$.
+By Claim~\ref{clm:(4+1)=LSS(4)}, we have a comparison configuration $(\tilde p,\tilde x_1,\dots,\tilde x_n)$ with central point $p$.
+Set $\tilde a_{i,j}=|\tilde p-\tilde x_i|^2+|\tilde p-\tilde x_j|^2-|\tilde x_i-\tilde x_j|^2$.
+Since $|\tilde x_i-\tilde x_j|\ge| x_i- x_j|$, we have $\tilde a_{i,j}\le a_{i,j}$ for any $i$ and $j$.
 Note that 
 \begin{align*}
-0&=\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j>
-\\
-&>\sum_{i,j}\tilde a_{i,j}\cdot \lambda_i\cdot\lambda_j= 
-\\
-&=\left|\sum_i\lambda_i\cdot (\tilde x_i-\tilde x_1)\right|^2\ge 
-\\
-&\ge0,
+0&=\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j\ge
+\sum_{i,j}\tilde a_{i,j}\cdot \lambda_i\cdot\lambda_j= 
+\left|\sum_i\lambda_i\cdot (\tilde x_i-\tilde p)\right|^2\ge 
+0.
 \end{align*}
---- a contradiction.
+It follows that 
+\[\sum_i\lambda_i\cdot (\tilde x_i-\tilde p)=0.\]
+Further, $\tilde a_{i,j}= a_{i,j}$, and, therefore, $|\tilde x_i-\tilde x_j|=| x_i- x_j|$ for all $i$ and $j$ --- hence the result.
+\qeds
+
+Note that any 2-point array is a degenerate tense array; the center can be chosen arbitrary.
+A 3-point array $(p,x,y)$ is tense with central point $p$ if we have equality 
+\[|p-x|+|p-y|=|x-y|.\]
+Note that any tense 3-array is nondegenerate.
+A 4-point array $(p,x,y,z)$ is tense with central point $p$ if there is an isometric comparison configuration $(\tilde p,\tilde x,\tilde y,\tilde z)$ with $\tilde p$ lying in the solid triangle $\tilde x\tilde y\tilde z$.
+Note that if $\tilde p$ lies in the interior of the solid triangle or the triangle is degenerate, then the array $(\tilde p,\tilde x,\tilde y,\tilde z)$ is nondegenerate;
+otherwise, if $\tilde p$ lies on a side of nondegenerate triangle $\tilde x\tilde y\tilde z$, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
+
+\begin{thm}{Claim}
+Suppose 5-point array $\bm{x}=(x_1,\dots,x_5)$ in a metric spacesatisfies all $\LSS(4)$-inequalities, has $k$ three-point tense arrays, and no tense arrays with four and five points.
+If $k\le 4$ then there is a $2$-dimensional subspace $S$ of quadratic forms on $\RR^4$ such that for any form $s\in S$ that sufficiently close to zero the array with asociated form $W_{\bm{x}}+s$ satisfies all $\LSS(4)$-inequalities.
+\end{thm}
+
+\parit{Proof.}
+Given a tense 3-point subarray of $\bm{x}$, say $(x_1,x_2,x_3)$, consider the metrics on $\bm{x}$ 
+such that the 3 distances between $x_1$, $x_2$, and $x_3$ are proportional to the original distances and the remaining distances are arbitrary.
+This set defines a subspace of quadratic forms of codimension 2 in the 10-dimesnional space of quadratic forms.
+Taking intersection of all such subspaces we get a subspace $S$ of dimension at least $(10-2\cdot k)$.
+
+It remains to show that this subspace meets the claim.
+Assume it does not hold.
+That is for arbitrary small $s\in S$ the metric on $\bm{x}$ defined by asociated quadraatic form $W_{\bm{x}}+s$ does not satisfy the $\LSS(4)$-inequalty.
+It means that there is a vector $w_s\in K_5$ such that 
+\[W_{\bm{x}}(w_s)+s(w_s)< 0.\]
 \qeds
 
 
-???
+
+We will be interested in 5-arrays $\bm{x}$ that satify all $\LSS(n)$ that have only 3-point tense subarrays.
+Each 3-point subarray corresponds to equality in one of triangle inequality.
+Equivalently, we have a line $L\subset K_5$ that is parallel to one of planes spanned by three vertices of $\triangle$ and such that $W_{\bm{x}}(w)=0$ for any $w\in L$.
+Note that in this case we only have finite set of such lines $L_1,\dots L_k$.
+Suppose $k\le 4$, then there is a $(10-2\cdot k)$-dimensional subspace $M$ of quadratic forms such that for any $m\in M$ sufficiently close to zero the form 
+$W+m$ satisfies all $\LSS(n)$-inequalities.
+
+
+
+
+
+
+
+
+
 
 
 
