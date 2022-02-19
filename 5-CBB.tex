@@ -247,7 +247,7 @@ Note that if $\tilde p$ lies in the interior of the solid triangle or the triang
 Otherwise, if $\tilde p$ lies on a side, say $[\tilde x,\tilde y]$ of nondegenerate triangle $[\tilde x\tilde y\tilde z]$, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
 In the latter case the 3-point array $(\tilde p,\tilde x,\tilde y)$ is tense and nondegenerate.
 
-\begin{thm}{Claim}
+\begin{thm}{Claim}\label{clm:10-2k}
 Suppose 5-point array $\bm{x}=(x_1,\dots,x_5)$ in a metric spacesatisfies all $\LSS(4)$-inequalities, has $k$ three-point tense arrays, and no tense arrays with four and five points.
 If $k\le 4$ then there is a $2$-dimensional subspace $S$ of quadratic forms on $\RR^4$ such that for any form $s\in S$ that sufficiently close to zero the array with asociated form $W_{\bm{x}}+s$ satisfies all $\LSS(4)$-inequalities.
 \end{thm}
@@ -812,21 +812,10 @@ in this case, the 4-point space is also isometric to a 4-point subset on a line 
 That is, if $P$ or $Y$ appear in $F$, then $F$ has a 4-point tense set.
 The latter contradicts the assumptions; so $P$ and $Y$ cannot appear in our configuration.
 
-Each tense triple gives at most two linear restrictions on the quadratic form.
-Indeed, a tense triple corresponds to a vector $v$ in the plane of some 2-face $T$ of $\triangle$ such that 
-$W(v)=0$, where $W$ denotes the associated form.
-Denote by $v'$ another vector in the plane of $T$ that is not parallel to $v$.
-The space of forms $U$ such that $U(v)=0$ and $v'U(v)=$ describes a subspace $S_v$ of $\RR^10$ of codimension at most 2.
-Note that for any form $U\in S_v$ for all $t$ sufficiently closed to 0, the forms $W+t\cdot U$ satisfy all $\LSS(4)$ conditions for vectors in a neightborhood of $v$.
-Therefore if we have only four vectors $v_1$, $v_2$, $v_3$, $v_4$, then $S_{v_1}\cap S_{v_2}\cap S_{v_3}\cap S_{v_4}$ has dimension at least 2.
-So we can choose a form $U$ in this subset that is not proportional to $W$.
-Then $W+tU$ satisfy the inequalities for $v$ near $v_1,v_2,v_3,v_4$ for all small $t$.
-Further for any vector away from the set $\{v_1,v_2,v_3,v_4\}$ the inequality is strict.
-Therfore again it is satisfied for all near by forms, in particular for $W+tU$.
-
-The space of quadratic forms on $\RR^4$ is 10-dimensional.
-Therefore, in order to be on an extremal ray, the quadratic form has to have at least 9 linear restrictions.
-Hence $F$ contains at least 5 tense triples.
+Let us show that $F$ contains at least 5 tense triples;
+assume $F$ has at most $4$ of them.
+By \ref{clm:10-2k}, the space of quadratic forms on $\RR^4$ contains a subspace $S$ in the of dimesnion at least 2 such that for any form $U\in S$ for all $t$ sufficiently close to 0, the forms $W+t\cdot U$ satisfy all $\LSS(4)$.
+In order to be on an extremal ray, the space $S$ must be one-dimensional --- a contradiction.
 
 The remaining part of the proof is a brute force search of all possible configurations that satisfy the conditions above.
 This search is roughly sketched on the following diagram that needs some explanation.
