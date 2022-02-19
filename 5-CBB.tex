@@ -209,12 +209,12 @@ We say that an array $(p,x_1,\dots,x_n)$ is \emph{tense} with central point $p$ 
 Note that if $(p,x_1,\dots,x_n)$ is \emph{tense}, then in its comparison configuration $\tilde p$ lies in the convex hull of the remaining points $\tilde x_1,\dots,\tilde x_n$.
 In particular, 
 \[\sum_i\lambda_i\cdot (\tilde x_i-\tilde p)=0 \leqno({*})\]
-for some coefficients $\lambda_1,\dots, \lambda_n$ such that all of them nonnegative and some of them are positive.
-If all we can choose all positive $\lambda_i$ in $({*})$, then we say that $(p,x_1,\dots,x_n)$ is nondegenerate tense array.
+for some nonnegative coefficients $\lambda_1,\dots, \lambda_n$ such that $\lambda_1+\dots+\lambda_n=1$.
+If all we can choose all positive $\lambda_i$ in $({*})$, then we say that $(p,x_1,\dots,x_n)$ is a \emph{nondegenerate tense array}.
 The following statement gives a description of nondegenerate tense arrays.
 
-\begin{thm}{Claim}
-Assume $n\le 4$ and $(p,x_1,\dots,x_n)$ is an array of points with a metric that satisfies $\LSS(n)$ .
+\begin{thm}{Claim}\label{clm:nondeg-tense}
+Assume $n\le 4$ and $(p,x_1,\dots,x_n)$ is an array of points with a metric that satisfies $\LSS(n)$.
 Suppose we have equality in $\LSS(n)$ for some positive $\lambda$-parameters;
 that is, for some positive values $\lambda_1,\dots,\lambda_n$ we have
 \[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j= 0,\]
@@ -243,8 +243,9 @@ A 3-point array $(p,x,y)$ is tense with central point $p$ if we have equality
 \[|p-x|+|p-y|=|x-y|.\]
 Note that any tense 3-array is nondegenerate.
 A 4-point array $(p,x,y,z)$ is tense with central point $p$ if there is an isometric comparison configuration $(\tilde p,\tilde x,\tilde y,\tilde z)$ with $\tilde p$ lying in the solid triangle $\tilde x\tilde y\tilde z$.
-Note that if $\tilde p$ lies in the interior of the solid triangle or the triangle is degenerate, then the array $(\tilde p,\tilde x,\tilde y,\tilde z)$ is nondegenerate;
-otherwise, if $\tilde p$ lies on a side of nondegenerate triangle $\tilde x\tilde y\tilde z$, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
+Note that if $\tilde p$ lies in the interior of the solid triangle or the triangle is degenerate, then the array $(\tilde p,\tilde x,\tilde y,\tilde z)$ is nondegenerate.
+Otherwise, if $\tilde p$ lies on a side, say $[\tilde x,\tilde y]$ of nondegenerate triangle $[\tilde x\tilde y\tilde z]$, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
+In the latter case the 3-point array $(\tilde p,\tilde x,\tilde y)$ is tense and nondegenerate.
 
 \begin{thm}{Claim}
 Suppose 5-point array $\bm{x}=(x_1,\dots,x_5)$ in a metric spacesatisfies all $\LSS(4)$-inequalities, has $k$ three-point tense arrays, and no tense arrays with four and five points.
@@ -252,64 +253,32 @@ If $k\le 4$ then there is a $2$-dimensional subspace $S$ of quadratic forms on $
 \end{thm}
 
 \parit{Proof.}
-Given a tense 3-point subarray of $\bm{x}$, say $(x_1,x_2,x_3)$, consider the metrics on $\bm{x}$ 
-such that the 3 distances between $x_1$, $x_2$, and $x_3$ are proportional to the original distances and the remaining distances are arbitrary.
-This set defines a subspace of quadratic forms of codimension 2 in the 10-dimesnional space of quadratic forms.
-Taking intersection of all such subspaces we get a subspace $S$ of dimension at least $(10-2\cdot k)$.
+Given a tense three-point subarray of $\bm{x}$, say $(x_1,x_2,x_3)$, consider the metrics on $\bm{x}$ 
+such that the three distances between $x_1$, $x_2$, and $x_3$ are proportional to the original distances and the remaining distances are arbitrary.
+This set defines a subspace of quadratic forms of codimension 2 in the 10-dimesnional space of quadratic forms on $\RR^4$.
+Since $k\le 4$, 
+taking intersection of all such subspaces we get a subspace $S$ of dimension at least $2$.
 
-It remains to show that this subspace meets the claim.
-Assume it does not hold.
-That is for arbitrary small $s\in S$ the metric on $\bm{x}$ defined by asociated quadraatic form $W_{\bm{x}}+s$ does not satisfy the $\LSS(4)$-inequalty.
-It means that there is a vector $w_s\in K_5$ such that 
-\[W_{\bm{x}}(w_s)+s(w_s)< 0.\]
-\qeds
+It remains to show that $S$ meets the claim; assume not.
+That is, for arbitrary small $s\in S$ the metric on $\bm{x}$ defined by asociated quadraatic form $W_{\bm{x}}+s$ does not satisfy the $\LSS(4)$-inequalty.
+It means that there is a vector $w\in K_5$ such that 
+\[W_{\bm{x}}(w)+s(w)< 0.\]
 
+Choose a positive quadratic form $r$ and minimal $t>0$ such that  
+\[W_{\bm{x}}(w)+s(w)+t\cdot r(w)\ge 0
+\leqno({*}{*})\] 
+for any $w\in K_5$.
+Note that for some $w\in K_5$, we have equality in $({*}{*})$.
+ 
+The metric on $\bm{x}$ that corresponds to the form $W_{\bm{x}}+s+t\cdot r$ satisfies all $\LSS(4)$ inequalities and
+by \ref{clm:nondeg-tense}, it has a tense array.
 
-
-We will be interested in 5-arrays $\bm{x}$ that satify all $\LSS(n)$ that have only 3-point tense subarrays.
-Each 3-point subarray corresponds to equality in one of triangle inequality.
-Equivalently, we have a line $L\subset K_5$ that is parallel to one of planes spanned by three vertices of $\triangle$ and such that $W_{\bm{x}}(w)=0$ for any $w\in L$.
-Note that in this case we only have finite set of such lines $L_1,\dots L_k$.
-Suppose $k\le 4$, then there is a $(10-2\cdot k)$-dimensional subspace $M$ of quadratic forms such that for any $m\in M$ sufficiently close to zero the form 
-$W+m$ satisfies all $\LSS(n)$-inequalities.
-
-
-
-
-
-
-
-
-
-
-
-
-Assume $n=5$ and $W_{\bm{x}}(w)=0$ for some $w\in K_5$.
-Then we have certain rigidity for the configurations described by the $(4+1)$-comparison.
-Namely, a part of one of these configurations is uniquely defined up to congruence.
-Such set might contain 3, 4 or 5 points.
-
-
-If $W_{\bm{x}}(w)\le0$, then the same construction can be applied, but the projection of a vertex, say $v_1$, of $\triangle$ can lie in the interior of the projection of its opposite facet;
-in this case, we say that the array $\bm{x}$ is \emph{tense}.
-The point $x_1$ in $\bm{x}$ that corresponds to $v_1$ is called \emph{marked point of} of the tense array.
-For tense arrays we have the following rigidity statement:
-
-\begin{thm}{Claim}\label{clm:W(w)==0}
-Any tense array of an Alexandrov space $A$ with nonnegative curvature is isometric to a point array of a Euclidean space.
-Moreover, its marked point corresponds to a point in the relative interior of convex hull of the points in the Euclidean array.
-\end{thm}
-
-\parit{Proof.}
-Given a point array $\bm{x}=(x_1,\dots,x_n)$ in $A$, denote by $v_1,\dots v_n$ the corresponding vertices of $\triangle$.
-
-Suppose $\bm{x}=(x_1,\dots,x_n)$ is a tense array with marked point $x_1$;
-that is, there is a vector $w$ is in the set $K_1$ of all linear combinations of $v_j-v_1$ with positive weights such that $W_{\bm{x}}(w)\le 0$. 
-
-By \ref{clm:W(w)<0}, we have that $W_{\bm{x}}(v)\ge 0$ for any $v$ in the convex combination of $v_j-v_1$.
-In particular $W_{\bm{x}}(w)=0$.
-Since $K_1$ is open and $w\in K_1$, we get that $W_{\bm{x}}\ge 0$.
-It remains to apply \ref{clm:W>=0}.
+Consider a limit array $l$ of such arrays as $s\to 0$. 
+Note that $l$ is isometric to an array in the Euclidean space and it cannot be one of $k$ tense array, for the original metric.
+Since $W_{\bm{x}}+s+t\cdot r\to W_{\bm{x}}$ as $s\to 0$, the array $l$ must contain one of $k$ arrays for the original metric.
+That is one of the three-point array sits in a four point array that is isometric to an array in the Euclidean space.
+It follows that there is a degenerate 4-point array for the original metric
+--- a contradiction.
 \qeds
 
 \section{Extremal metrics}\label{sec:ext}
@@ -348,8 +317,7 @@ the latter is impossible for an extremal metric.
 
 The remaining part of the proof is broken into cases:
 \begin{itemize}
-\item $F$ contains a 5-point  tense set; it follows from \ref{clm:W(w)==0}.
-In this case, the needed Riemannian manifold is a Euclidean space.
+\item $F$ contains a 5-point tense set in this case $F$ admits an isometric embedding into Euclidean space.
 \item $F$ contains a 4-point  tense set; it follows from in Proposition~\ref{prop:4-tense} below.
 \item $F$ contains only 3-point  tense sets; it follows from in Proposition~\ref{prop:3-tense}. (This is the hardest part of the proof.) 
 \qeds
@@ -368,7 +336,7 @@ The space $W$ will be a doubling of a convex polyhedral set in $\RR^3$.
 \parit{Proof.}
 Let us label the points in $F$ by $p$, $q$, $x_1$, $x_2$, and $x_3$ so that the array $(p,x_1,x_2,x_3)$ is tense with marked point $p$.
 
-By \ref{clm:W(w)==0}, we can choose an array $(\tilde p, \tilde x_1, \tilde x_2, \tilde x_3)$ in $\RR^2$ that is isometric to  $(p, x_1, x_2, x_3)$.
+By the definition of tense array, we can choose an array $(\tilde p, \tilde x_1, \tilde x_2, \tilde x_3)$ in $\RR^2$ that is isometric to  $(p, x_1, x_2, x_3)$.
 Consider $\RR^2$ as a plane in $\RR^3$.
 
 By \ref{clm:(4+1)=LSS(4)}, we can apply the (4+1)-comparison.
@@ -461,18 +429,20 @@ After that we construct a smooth Riemannian manifold with nonnegative curvature 
 \parit{Step 1.}
 Consider the four ellipsoids $P$, $X_1$, $X_2$, $X_3$ with the major axes $|q-p|$, $|q-x_1|$, $|q-x_2|$,$|q-x_3|$, first focus at $\tilde s$, and the second focus at $\tilde p$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ respectively.
 
-The construction of the facets of $V$ above implies that for each ellipsoid has a tangent plane that contains all the ellipsoids on one side --- these planes are the perpendicular bisectors to $[\tilde s\tilde q]$ and $[\tilde s\tilde q_i]$ for all $i$.
+The construction of the facets of $V$ above implies that for each ellipsoid has a tangent plane that contains all the ellipsoids on one side --- these planes are the perpendicular bisectors to $[\tilde s,\tilde q]$ and $[\tilde s,\tilde q_i]$ for all $i$.
 Note that any choice of such planes does the trick --- they can be used instead of perpendicular bisectors discussed above.
 These planes will be called \emph{$p$-plane} and \emph{$x_i$-planes} respectively.
 We need to choose them so that no pair of these planes pass thru $\tilde p$, $\tilde x_1$, $\tilde x_2$, or $\tilde x_3$.
 The latter is only possible if the corresponding ellipsoid degenerates to a line segment.
 
-We can assume that $P$ is not degenerate; otherwise, the array $\tilde p$, $\tilde q$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ is isometric to $F$;
+We can assume that one of ellipsoids is not degenerate; otherwise, the array $\tilde p$, $\tilde q$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ is isometric to $F$;
 in this case, $F$ is isometric to a subset of the Euclidean space.
 Further, if only one ellipsoid, say $X_1$ is degenerate, then we can move $\tilde s$ slightly making this ellipsoid nondegenerate and keeping the rest of its properties.
 So we can assume that three or two ellipsoids are degenerate.
 
 Suppose $X_1$, $X_2$, $X_3$ are degenerate (picture on the left), then it is easy to choose $x_i$-planes tangent to $P$; it solves our problem.
+Other triple of ellipsoids, say $P$, $X_1$, $X_2$ might be degenerate only if $\tilde p\in[\tilde x_1,\tilde x_2]$.
+This case is even simpler --- we can choose one plane that contains $\tilde p$, $\tilde x_1$, $\tilde x_2$ and tangent to $X_3$.
 
 \begin{figure}[!ht]
 \begin{minipage}{.3\textwidth}
@@ -491,7 +461,8 @@ Suppose $X_1$, $X_2$, $X_3$ are degenerate (picture on the left), then it is eas
 \end{minipage}
 \end{figure}
 
-Now, suppose exactly two ellipsoins, say $X_1$, $X_2$, are degenerate.
+Now, suppose exactly two ellipsoins, note that it cannot be $P$.
+Therefore we can assume that $X_1$ and $X_2$ are degenerate.
 In this case we can assume that $\tilde s\in[\tilde x_1,\tilde x_2]$;
 if not we can slightly move $\tilde s$ toward to $\tilde x_1$ and $\tilde x_2$ making $X_1$ and $X_2$ nondegenerate and keeping the rest properties of~$\tilde s$.
 Since a focus of $P$ lies on $[\tilde x_1,\tilde x_2]$, we have that $x_1$-plane cannot be $x_2$-plane and the other way around.
@@ -805,7 +776,7 @@ here we assume that $j'\ne j$, so $2'=1$ and $1'=2$.
 
 The needed points $\tilde w_{21}$ and $\tilde w_{22}$ can be chosen to be reflections of $\tilde w_{1}$ and $\tilde w_{2}$ respectively across a line $\ell$ that we are about to describe.
 Suppose $\triangle \tilde s\tilde w_1 \tilde w_2$ is a model triangle for $\triangle v_2w_1w_2$ such that $\tilde s$ lies on the opposite side from $\tilde v_2$ with respect to the line $\tilde w_1\tilde w_2$.
-Then $\ell$ is the perpendicular bisector of $[\tilde v_1 \tilde s]$.
+Then $\ell$ is the perpendicular bisector of $[\tilde v_1, \tilde s]$.
 Since $|\tilde w_i-\tilde v_1|\ge | w_i- v_1|=|\tilde w_i-\tilde s|$ the points $\tilde w_1$ and $\tilde w_2$ lie on the opposite side from $\tilde v_1$ with respect to $\ell$.
 Whence the conditions on $\tilde w_{21}$ and $\tilde w_{22}$ follow.
 In addition, by construction, we get $(\asterism)$ at $\tilde v_2$.
