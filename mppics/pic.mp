@@ -351,7 +351,13 @@ u:=.5cm;
 picture s[];
 
 s1= image(draw circle(origin,u);
-dOt (0,1)*u, (0,1)*u rotated 72, (0,1)*u rotated -72, (0,1)*u rotated 144, (0,1)*u rotated -144;);
+dOt (0,1)*u, (0,1)*u rotated 72, (0,1)*u rotated -72, (0,1)*u rotated 144, (0,1)*u rotated -144;
+label.llft(btex $a$ etex, (0,1)*u rotated 144);
+label.lft(btex $b$ etex, (0,1)*u rotated 72);
+label.top(btex $c$ etex, (0,1)*u);
+label.rt(btex $d$ etex, (0,1)*u rotated -72);
+label.lrt(btex $e$ etex, (0,1)*u rotated -144);
+);
 
 draw s1;
 
@@ -365,9 +371,14 @@ draw z.a2{-8,5}..z.b2..z.c2..z.d2..{-8,-5}z.a2;
 draw z.a2..z.e2..z.c2;
 draw z.b2..z.e2..z.d2;
 dOt z.a2,z.b2,z.c2,z.d2,z.e2;
+label.bot(btex $a$ etex, z.a2);
+label.lft(btex $b$ etex, z.b2);
+label.top(btex $c$ etex, z.c2);
+label.rt(btex $d$ etex, z.d2);
+label.lrt(btex $e$ etex, z.e2);
 );
 
-draw s2 shifted ((3,0)*u);
+draw s2 shifted ((3.5,0)*u);
 
 s3=image(
 z.a3=(0,-1)*u;
@@ -379,9 +390,16 @@ draw z.a3..z.b3..z.c3..z.d3..cycle;
 draw z.a3..z.e3..z.c3;
 draw z.b3..z.e3..z.d3;
 dOt z.a3,z.b3,z.c3,z.d3,z.e3;
+label.bot(btex $a$ etex, z.a3);
+label.lft(btex $b$ etex, z.b3);
+label.top(btex $c$ etex, z.c3);
+label.rt(btex $d$ etex, z.d3);
+label.lrt(btex $e$ etex, z.e3);
 );
 
-draw s3 shifted ((6,0)*u);
+draw s3 shifted ((7,0)*u);
+
+
 
 endfig;
 
