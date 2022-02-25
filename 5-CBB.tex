@@ -46,18 +46,19 @@ We give an if-and-only-if condition on a five-point metric spaces that admit emb
 Toponogov theorem provides an if-and-only-if condition on a metric on four-point space that admits an isometric embedding into a nonnegatively curved Riemannian manifold.
 The only-if part is proved by Toponogov, and the if part follows from a result of Abraham Wald \cite[\S 7]{wald}.
 
-In this note, we give an analogous condition for five-point spaces.
-Its only-if part is well known, but the if part is new.
-The formulation uses the so-called Lang--Schroeder--Sturm inequality \cite{lang-schroeder, sturm} which we are about to discuss.
+We show that the so-called Lang--Schroeder--Sturm inequality is the analogous condition for five-point spaces.
+The only-if part is well known, but the if part is new.
+In a sense, our result is negative --- it was hard to imagine some new restrictions, but now we know there are none.
 
-Consider an $(n+1)$-point array $(p,x_1,\dots x_n)$ in a metric space $X$ with nonnegative curvature.
+Let us formulate the Lang--Schroeder--Sturm inequality \cite{lang-schroeder, sturm}.
+Consider an $(n+1)$-point array $(p,x_1,\dots x_n)$ in a metric space $X$.
 We say that the array satisfies Lang--Schroeder--Sturm inequality with center $p$
 if for any nonnegative values $\lambda_1,\dots,\lambda_n$ we have
 \[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j\ge 0,\]
 where $a_{ij}=|p-x_i|_X^2+|p-x_j|_X^2-|x_i-x_j|_X^2$
 and we denote by $|p-q|_X$ the distance between points in $X$.
 
-Recall that any point array in a  complete nonnegatively curved Riemannian manifold (and, more generally, in any nonnegatively curved Alexandrov space) meets the Lang--Schroeder--Sturm inequality.
+Recall that any point array in a  complete nonnegatively curved Riemannian manifold (and, more generally, in any nonnegatively curved Alexandrov space) meets the Lang--Schroeder--Sturm inequality \cite{lang-schroeder, sturm}.
 In particular, 
 the Lang--Schroeder--Sturm inequalities for all relabelings of points in a finite metric space $F$
 gives a necessary condition for the existence of isometric embedding of $F$ into a complete Riemannian manifold with nonnegative curvature.
@@ -75,6 +76,7 @@ We first construct an Alexandrov space with this property and then smooth it sli
 Our proof uses brute force search that was originally done on a computer.
 We want to thank Arseniy Akopyan and Alexander Gil who helped us with programming.
 We present a hand-made proof that was found later.
+It still based on brute force search, and we hope that a more conceptual proof will be found latter.
 Our paper is inspired by an unpublished note of Vladimir Zolotov and the first author;
 the results from this note are discussed briefly in the last section.
 
@@ -111,7 +113,7 @@ A five-point metric space $F$ admits an isometric embedding into an Alexandrov s
 if and only if it satisfies (4+1)-comparison for all relabelings.
 \end{thm}
 
-The following proof is nearly identical to the proof of \cite[Proposition 4.1]{lebedeva-petrunin-zolotov}.
+The following proof is nearly identical to the proof of Proposition 4.1 in \cite{lebedeva-petrunin-zolotov}.
 
 \parit{Proof of \ref{clm:(4+1)=LSS(4)}.}
 Suppose $p,x_1,\dots,x_4$ satisfies $\LSS(4)$;
@@ -168,12 +170,12 @@ the pair $\tilde x_2$, $\tilde x_4$  slightly down, decreases~$s$ --- a contradi
 In this section we recall a construction from \cite{petrunin-2017}.
 Let $\bm{x}=(x_1,\dots,x_n)$ be a point array in a metric space $X$.
 
-Choose a simplex $\triangle$ in $\RR^{n-1}$; for example, we can take the standard simplex with the first $(n-1)$ of its vertices $v_1,\dots,v_n$ form the standard basis on $\RR^{n-1}$, and $v_n=0$.
+Choose a simplex $\triangle$ in $\RR^{n-1}$; for example, we can take the standard simplex with the first $(n-1)$ of its vertices $v_1,\dots,v_{n-1}$ form the standard basis on $\RR^{n-1}$, and $v_n=0$.
 
 Consider a quadratic form $W_{\bm{x}}$ on $\RR^{n-1}$ that is uniquely defined by
 \[W_{\bm{x}}(v_i-v_j)=|x_i-x_j|^2_X\] 
 for all $i$ and $j$.
-The constructed quadratic form $W_{\bm{x}}$ will be called
+It will be called
 the form \emph{associated} to the point array $\bm{x}$.
 The following claim is self-evident:
 
@@ -189,7 +191,6 @@ the three triangle inequalities for the distances between $x_1$, $x_2$, and $x_3
 For an $n$-point array, it implies that $W_{\bm{x}}(v)\ge 0$ for any vector $v$ in a plane spanned by a triple of vertices of $\triangle$.
 
 \parbf{Lang--Schroeder--Sturm inequalities.}
-Given nonzero vector $w\in\RR^{n-1}$, denote by $L_w$ the line spanned by $w$.
 Consider the cone $K_n\subset \RR^{n-1}$ that contains lines $L$ that connect a point on a facet of $\triangle$ with its opposite vertex.
 Note that $K_3=\RR^2$, but for $n\ge 4$ the cone $K_n$ is a proper subset of $\RR^{n-1}$.
 
@@ -216,7 +217,7 @@ If we can choose all positive $\lambda_i$ in $({*})$, then we say that $(p,x_1,\
 The following statement describes nondegenerate tense arrays.
 
 \begin{thm}{Claim}\label{clm:nondeg-tense}
-Assume $n\le 4$ and $(p,x_1,\dots,x_n)$ is an array of points with a metric that satisfies $\LSS(n)$.
+Assume $n\le 4$ and $(p,x_1,\dots,x_n)$ is an array of points with a metric that satisfies $\LSS(n)$ with center $p$.
 Suppose we have equality in $\LSS(n)$ for some positive $\lambda$-parameters;
 that is, for some positive values $\lambda_1,\dots,\lambda_n$ we have
 \[\sum_{i,j}a_{i,j}\cdot \lambda_i\cdot\lambda_j= 0,\]
@@ -248,14 +249,15 @@ Further, $\tilde a_{i,j}= a_{i,j}$, and, therefore, $|\tilde x_i-\tilde x_j|=| x
 Note that any 2-point array is a degenerate tense array; the center can be chosen arbitrarily.
 A 3-point array $(p,x,y)$ is tense with center $p$ if we have equality 
 \[|p-x|+|p-y|=|x-y|.\]
-Note that any tense 3-array is nondegenerate.
+Note that any tense 3-point array is nondegenerate.
 A 4-point array $(p,x,y,z)$ is tense with center $p$ if there is an isometric comparison configuration $(\tilde p,\tilde x,\tilde y,\tilde z)$ with $\tilde p$ lying in the solid triangle $\tilde x\tilde y\tilde z$.
 Note that if $\tilde p$ lies in the interior of the solid triangle or the triangle is degenerate, then the array $(\tilde p,\tilde x,\tilde y,\tilde z)$ is nondegenerate.
 Otherwise, if $\tilde p$ lies on a side, say $[\tilde x,\tilde y]$ and the triangle $[\tilde x\tilde y\tilde z]$ is nondegenerate, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
 In the latter case the 3-point array $(\tilde p,\tilde x,\tilde y)$ is tense and nondegenerate.
 
 \begin{thm}{Claim}\label{clm:10-2k}
-Suppose 5-point array $\bm{x}=(x_1,\dots,x_5)$ in a metric space satisfies all $\LSS(4)$-inequalities, has $k$ three-point tense arrays, and no tense arrays with four and five points.
+Let $\bm{x}=(x_1,\dots,x_5)$ be a 5-point array in a metric space that satisfies all $\LSS(4)$-inequalities.
+Suppose that $\bm{x}$ has $k$ three-point tense arrays, and no tense arrays with four and five points.
 If $k\le 4$ then there is a $2$-dimensional subspace $S$ of quadratic forms on $\RR^4$ such that for any form $U\in S$ that is sufficiently close to zero the array with associated form $W_{\bm{x}}+U$ satisfies all $\LSS(4)$-inequalities.
 \end{thm}
 
@@ -281,9 +283,9 @@ The metric on $\bm{x}$ that corresponds to the form $W_{\bm{x}}+U+t\cdot r$ sati
 by \ref{clm:nondeg-tense}, it has a tense array with at least 3 points.
 However, since $t>0$, it has no 3-point tense arrays.
 
-Consider a limit of tense arrays, say $l$, as $U\to 0$. 
-Note that $l$ is isometric to an array in the Euclidean space.
-Since $W_{\bm{x}}+U+t\cdot I\to W_{\bm{x}}$ as $U\to 0$, the array $l$ must contain one of the three-point tense arrays for the original metric.
+Choose an array $Q$ that remains to be tense as $U\to 0$. 
+Note that $Q$ is isometric to an array in the Euclidean space.
+Since $W_{\bm{x}}+U+t\cdot I\to W_{\bm{x}}$ as $U\to 0$, the array $Q$ must contain one of the three-point tense arrays for the original metric.
 That is, one of the three-point arrays sits in a four-point array that is isometric to an array in the Euclidean space.
 It follows that there is a degenerate 4-point array for the original metric
 --- a contradiction.
@@ -291,9 +293,9 @@ It follows that there is a degenerate 4-point array for the original metric
 
 \section{Extremal metrics}\label{sec:ext}
 
-Denote by $\mathcal{A}_5$ the space of metrics on a 5-point set $F=\{a,b,c,d,e\}$ that admits an embedding into an Alexandrov space with nonnegative curvature.
+Denote by $\mathcal{A}_5$ the space of metrics on a 5-point set $F=\{a,b,c,d,e\}$ that admits an embedding into a Riemannian manifold with nonnegative curvature.
 The associated quadratic forms for spaces in $\mathcal{A}_5$ form a convex cone in the space of all quadratic forms on $\RR^4$.
-The latter follows since nonnegative curvature in the sense of Alexandrov survives after rescaling and passing to a product space.
+The latter follows since nonnegative curvature survives after rescaling and passing to a product space.
 
 Denote by $\mathcal{B}_5$ the space of metrics on $F$ that satisfies all Lang--Schroeder--Sturm inequalities for all relabelings.
 As well as for $\mathcal{A}_5$, the associated forms for spaces in $\mathcal{B}_5$ form a convex cone in the space of all quadratic forms on $\RR^4$.
@@ -343,6 +345,10 @@ Then $F$ is isometric to a subset of complete nonnegatively curved Riemannian ma
 In the following proof, we first construct a nonnegatively curved Alexandrov space with an isometric copy of $F$ and then smooth it.
 The space will be a doubling of a convex polyhedral set in $\RR^3$.
 
+Further we use notations
+\[\hinge xyz,\quad\measuredangle\hinge xyz,\quad\text{and}\quad \angk{x}{y}{z}\]
+for hinge, its angle measure, and the model angle respectively.
+
 \parit{Proof.}
 Let us label the points in $F$ by $p$, $q$, $x_1$, $x_2$, and $x_3$ so that the array $(p,x_1,x_2,x_3)$ is tense with center $p$.
 
@@ -359,16 +365,16 @@ It implies the existence of point $\tilde q\in\RR^3$ such that
 \]
 for any $i$. 
 
-Further, let us show that there are points $\tilde q_1$, $\tilde q_2$, $\tilde q_3$ in the plane thru $\tilde p$, $\tilde x_1$, $\tilde x_2$, and $\tilde x_3$ such that we have the following four conditions
+Further, let us show that there are points $\tilde q_1$, $\tilde q_2$, $\tilde q_3$ in the plane thru $\tilde p$, $\tilde x_1$, $\tilde x_2$, and $\tilde x_3$ such that the following four conditions
 \[|\tilde p-\tilde q_i|_{\RR^3}\ge |p-q|_F,
 \quad
 |\tilde x_j-\tilde q_i|_{\RR^3}\ge|x_j-q|_F,
 \quad
 |\tilde x_i-\tilde q_i|_{\RR^3}=|x_i-q|_F,
 \leqno({*}{*})\]
-for all $i$ and $j$.
+hold for all $i$ and $j$.
 
-Denote by $\Gamma_1$ the intersection of the circle with the vertical angle of $\ang{\tilde x_2}{\tilde x_1}{\tilde x_3}$.
+Denote by $\Gamma_1$ the intersection of the circle with the angle vertical to the hinge $\hinge{\tilde x_2}{\tilde x_1}{\tilde x_3}$.
 Let us show that $\tilde q_1$ can be chosen on $\Gamma_1$.
 The point $\tilde q_1$ has to satisfy additional three conditions:
 \[\measuredangle\hinge{\tilde x_1}{\tilde x_2}{\tilde q_1}\ge \angk{x_1}{x_2}{q},
@@ -393,7 +399,7 @@ By the construction and comparison we have
 These inequalities and identities imply that each pair of arcs $\breve{X}_{1,2}$, $\breve{X}_{1,3}$, and $\breve{P}_{1}$ have nonempty intersection.
 By 1-dimensional Helly's theorem, all three arcs intersect;
 so we can choose $\tilde q_1$ in this intersection.
-The same way construct $\tilde q_2$ and $\tilde q_3$.
+The same way we construct $\tilde q_2$ and $\tilde q_3$.
 
 Now let us show that there is a point $\tilde s\in\RR^2$ such that
 \begin{align*}
@@ -402,7 +408,7 @@ Now let us show that there is a point $\tilde s\in\RR^2$ such that
 |\tilde x_i-\tilde s|_{\RR^3}&\le|x_i-q|_F.
 \end{align*}
 for all $i$.
-In other words, we need to show that the following four closed balls have a nonempty intersection: 
+In other words, the following four closed balls have a nonempty intersection: 
 $\bar B[\tilde p,|p-q|_F]$ and
 $\bar B[\tilde x_i,|x_i-q|_F]$ for all $i$.
 Indeed, by the overlap lemma \cite{alexander2019alexandrov}, any 3 of these balls have a nonempty intersection;
@@ -413,8 +419,8 @@ The four perpendicular bisectors to
 $[\tilde s, \tilde q]$, 
 $[\tilde s, \tilde q_1]$, 
 $[\tilde s, \tilde q_2]$, 
-$[\tilde s, \tilde q_3]$ cut from $\RR^3$ a closed convex set $V$ that contains $\tilde s$;
-it might be a one-sided infinite triangular prism or, if $\tilde q$ lies in the plane of the triangle, a two-sided infinite quadrangular prism.
+$[\tilde s, \tilde q_3]$ cut from $\RR^3$ a closed convex set $V$ that contains $\tilde s$.
+(It might be a one-sided infinite triangular prism or, if $\tilde q$ lies in the plane of the triangle, a two-sided infinite quadrangular prism.)
 Note that the inequalities $({*})$ and $({*}{*})$ imply that $V$ contains the points $\tilde p$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$.
 
 Consider the doubling $W$ of $V$ with respect to its boundary;
@@ -445,7 +451,7 @@ These planes will be called \emph{$p$-plane} and \emph{$x_i$-planes} respectivel
 We need to choose them so that no pair of these planes pass thru $\tilde p$, $\tilde x_1$, $\tilde x_2$, or $\tilde x_3$.
 The latter is only possible if the corresponding ellipsoid degenerates to a line segment.
 
-We can assume that one of the ellipsoids is not degenerate; otherwise, the array $\tilde p$, $\tilde q$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ is isometric to $F$;
+We can assume that one of the ellipsoids is nondegenerate; otherwise, the array $\tilde p$, $\tilde q$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ is isometric to $F$;
 in this case, $F$ is isometric to a subset of the Euclidean space.
 Further, if only one ellipsoid, say $X_1$ is degenerate, then we can move $\tilde s$ slightly making this ellipsoid nondegenerate and keeping the rest of its properties.
 So we can assume that three or two ellipsoids are degenerate.
@@ -471,7 +477,7 @@ This case is even simpler --- we can choose one plane that contains $\tilde p$, 
 \end{minipage}
 \end{figure}
 
-Now, suppose exactly two ellipsoids, note that it cannot be $P$.
+Now, suppose exactly two ellipsoids are degenerate, note that it cannot be $P$.
 Therefore we can assume that $X_1$ and $X_2$ are degenerate.
 In this case, we can assume that $\tilde s\in[\tilde x_1,\tilde x_2]$;
 if not we can slightly move $\tilde s$ toward to $\tilde x_1$ and $\tilde x_2$ making $X_1$ and $X_2$ nondegenerate and keeping the rest properties of~$\tilde s$.
@@ -519,7 +525,7 @@ Observe that $F$ has tense set $abc$ if and only if
 \includegraphics{mppics/pic-200}
 \end{wrapfigure}
 
-On the diagrams, we will mark three-point tense sets by connecting its points by a smooth curve so that the center is in the middle.
+On the diagrams, we will connect three-point tense sets by a smooth curve so that the center is in the middle.
 For example, the given diagram describes a metric on $\{a,b,c,d,e\}$ with five tense sets $abc$, $bcd$, $cda$, $dae$, $aec$.
 
 }
@@ -567,8 +573,8 @@ for any $i\pmod 5$.
 In this case, $F$ is isometric to a 5-point subset in the circle of length 
 $\ell=|x_1-x_2|_F+\dots+|x_4-x_5|_F+|x_5-x_1|_F$.
 
-By the key lemma, it remains to consider the case of metric that has two tense triples with a common center.
-In this case, we can relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2$ and $w_1xw_2$.
+By the key lemma, it remains to consider the case with two tense triples with a common center.
+Let us relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2$ and $w_1xw_2$.
 
 \begin{wrapfigure}{r}{25mm}
 \vskip-0mm
@@ -608,7 +614,7 @@ Further, choose a three-edge path in the triangulation connecting $v_1$ to $v_2$
 Consider the polygonal line in the plane $\tilde v_1\tilde w_1\tilde x\tilde v_2$ with the same angles and sides as in $L$ such that $\tilde v_1$ and $\tilde v_2$ lie on the opposite sides from the line $\tilde w_1\tilde x$.
 Set 
 \[\tilde Z(v_1w_1xv_2)\df |\tilde v_1-\tilde v_2|.\]
-The next group of conditions has eight zigzag comparisons:
+The next group of conditions has eight comparisons:
 \[
 \begin{aligned}
 |v_1- v_2|&\le \tilde Z(v_1w_ixv_2),
@@ -622,7 +628,7 @@ The next group of conditions has eight zigzag comparisons:
 \leqno({*}{*})
 \]
 for any $i$.
-This condition implies that $\iota$ preserves the distance between two remaining pairs $(v_1,v_2)$ and $(w_1,w_2)$.
+These conditions imply that $\iota$ preserves the distance between two remaining pairs $(v_1,v_2)$ and $(w_1,w_2)$.
 Indeed, suppose that a minimizing geodesic $\gamma$ from $\hat v_1$ to $\hat v_2$ is shorter than $|v_1-v_2|_F$.
 Since two edges $\hat v_1\hat x$ and $\hat x\hat v_2$ have total length $|v_1-v_2|_F$,
 we can assume that $\gamma$ runs in a pair of two adjacent triangles, say $[\hat v_1\hat x\hat w_1]$ and $[\hat v_2\hat x\hat w_1]$.
@@ -808,7 +814,7 @@ Therefore a slight smoothing around singularities does not create a problem.
 
 \parit{Proof of \ref{lem:key}.}
 Since $F$ is extreme, any pair of points of $F$ must lie in a tense set.
-If not, then all $\LSS(4)$ inequalities will remain to hold true after a slight change of the distance between the pair.
+If not, then all $\LSS(4)$ inequalities will remain to hold after a slight change of the distance between the pair.
 The latter contradicts that $F$ is extreme.
 
 \begin{wrapfigure}[5]{l}{60mm}
@@ -830,11 +836,11 @@ The latter contradicts the assumptions; so $P$ and $Y$ cannot appear in our conf
 
 Let us show that $F$ contains at least 5 tense triples;
 assume $F$ has at most $4$ of them.
-By \ref{clm:10-2k}, the space of quadratic forms on $\RR^4$ contains a subspace $S$ of dimesnion at least 2 such that for any form $U\in S$ for all $t$ sufficiently close to 0, the forms $W+t\cdot U$ satisfy all $\LSS(4)$.
+By \ref{clm:10-2k}, the space of quadratic forms on $\RR^4$ contains a subspace $S$ of dimesnion at least 2 such that for any form $U\in S$ for all $t$ sufficiently close to zero, the forms $W+t\cdot U$ satisfy all $\LSS(4)$.
 Therefore $F$ is not extremal --- a contradiction.
 
 The remaining part of the proof is a brute force search of all possible configurations that satisfy the conditions above.
-This search is roughly sketched on the following diagram that needs some explanation.
+This search is sketched on the following diagram that needs some explanation.
 \begin{figure}[ht!]
 \centering
 \includegraphics{mppics/pic-210}
@@ -852,7 +858,7 @@ If there are no free pairs (these are \ref{a(bcd)e+bcd}, \ref{abcdead}, \ref{abc
 then we need to check all triples,
 but due to symmetry, the number of triples can be reduced.
 
-Once we did the classification, we need to find all configurations with at least 5 triples (these start with column 5)
+Once we did the classification, we need to find all configurations with at least~5 triples (these start with column 5)
 such that each pair belongs to one of the tense triples (those that have no dashed line).
 So we are left with three cases \ref{abcdead}, \ref{abcda+aec+bed}, and \ref{abcdab+aec+bed} marked in bold;
 it proves the lemma.
@@ -862,7 +868,7 @@ It uses the following notations.
 If a candidate triple, say $abd$ violates $Y$ rule with an existing triple, say $abc$, then we write \xcancel{$abd$}$Yabc$.
 Similarly, if a candidate triple, say $adb$ violates $P$ rule with an existing triple, say $abc$, then we write \xcancel{$adb$}$Pabc$.
 Further, assume a candidate, say $dbe$, does not violate the rules and so it can be added.
-Suppose that after adding this triple we get a new configuration, say \ref{abc+dbe};
+Suppose that after adding this triple we get a new configuration, say~\ref{abc+dbe};
 in this case, we write $dbe{\to}$\ref{abc+dbe}.
 Note that the new configuration is relabeled arbitrarily.
 
@@ -1289,7 +1295,7 @@ they were obtained in an unpublished note by Vladimir Zolotov and the first auth
 Most of our arguments can be applied to arbitrary curvature bound;
 Section~\ref{sec:ext} is the only place where we essentially use that the bound is zero.
 
-It might be interesting to classify 5-point subsets in other classes of spaces;
+It would be interesting to classify 5-point subsets in other classes of spaces;
 for example, in products of circles, or complete flat manifolds.
 It is not hard to see that the second and third types of spaces in \ref{lem:key} do not admit an embedding into a product of circles, so the answer must be different.
 We are not aware of 5-point spaces that admit an isometric embedding into a complete nonnegatively curved Riemannian manifold, but not in a flat manifold.
@@ -1301,7 +1307,7 @@ The case of extremal metrics only with 3-point tense sets seems to be easier.
 The 5-point tense set can be solved following our argument in \ref{prop:4-tense}.
 At the moment we do not see a way to do the 6- and 4-point tense sets.
 
-It would be interesting to find conditions on finite subsets of metric spaces that are related to other curvature bounds as, for example, nonnegative curvature operator or nonnegative isotropic curvature; see \cite[1.19$_+(e)$]{gromov}.
+It might be interesting to find conditions on finite subsets of metric spaces that are related to other curvature bounds as, for example, nonnegative curvature operator or nonnegative isotropic curvature; see \cite[1.19$_+(e)$]{gromov}.
 
 
 {\sloppy
