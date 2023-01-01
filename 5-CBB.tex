@@ -51,7 +51,7 @@ The only-if part is proved by Toponogov, and the if part follows from a result o
 
 We show that the so-called Lang--Schroeder--Sturm inequality is the analogous condition for five-point spaces.
 The only-if part is well known, but the if part is new.
-In a sense, our result is negative --- it was hard to imagine some new restrictions, but now we know there are none.
+It was hard to imagine some new restrictions, but now we know there are none.
 
 Let us formulate the Lang--Schroeder--Sturm inequality \cite{lang-schroeder, sturm}.
 Consider an $(n+1)$-point array $(p,x_1,\dots x_n)$ in a metric space $X$.
@@ -83,7 +83,8 @@ Our paper is inspired by an unpublished note of Vladimir Zolotov and the first a
 the results from this note are discussed briefly in the last section.
 
 \parbf{Acknowledgments.}
-We want to thank Arseniy Akopyan and Alexander Gil who helped us with programming.
+We want to thank Arseniy Akopyan and Alexander Gil for helping us with programming.
+We would also like to thank Tetsu Toyoda for pointing out an error in the proof of Proposition~\ref{prop:3-tense}.
 The first author was partially supported by Russian Foundation for Basic Research grant 20-01-00070, 
 the second author was partially supported by National Science Foundation grant DMS-2005279.
 
@@ -182,7 +183,7 @@ Consider a quadratic form $W_{\bm{x}}$ on $\RR^{n-1}$ that is uniquely defined b
 \[W_{\bm{x}}(v_i-v_j)=|x_i-x_j|^2_X\] 
 for all $i$ and $j$.
 It will be called
-the form \emph{associated} to the point array $\bm{x}$.
+the \emph{associated} form to the point array $\bm{x}$.
 The following claim is self-evident:
 
 \begin{thm}{Claim}\label{clm:W>=0}
@@ -306,7 +307,7 @@ The latter follows since nonnegative curvature survives after rescaling and pass
 Denote by $\mathcal{B}_5$ the space of metrics on $F$ that satisfies all Lang--Schroeder--Sturm inequalities for all relabelings.
 As well as for $\mathcal{A}_5$, the associated forms for spaces in $\mathcal{B}_5$ form a convex cone in the space of all quadratic forms on $\RR^4$.
 
-Since the associated quadratic form describes its metric completely, we may identify $\mathcal{A}_5$ and $\mathcal{B}_5$ with $\RR^{10}$ --- the space of quadratic forms on $\RR^4$.
+Since the associated quadratic form describes its metric completely, we may identify $\mathcal{A}_5$ and $\mathcal{B}_5$ with subsets in $\RR^{10}$ --- the space of quadratic forms on $\RR^4$.
 This way we can think that $\mathcal{A}_5$ and $\mathcal{B}_5$ are convex cones in $\RR^{10}$.
 
 The set $\mathcal{B}_5$ is a cone so it does not have extremal points except the origin.
@@ -437,13 +438,13 @@ By construction, the array $\hat p=\iota_1(\tilde p)$, $\hat x_1=\iota_1(\tilde 
 \medskip
 
 Finally, we need to show that the obtained space can be smoothed into a Riemannian manifold that still has an isometric copy of $F$.
-This part is divided into two steps; first, we show that the construction above can be made so that the points $\tilde s$, $\tilde p$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ do not lie on the edges $V$.
+This part is divided into two steps; first, we show that the construction above can be made so that the points $\tilde s$, $\tilde p$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ do not lie on the edges of $V$.
 In this case, there is a complement, say $U$, of a neighborhood of the singular set in $W$ that contains
 the 5-point set together with all the geodesics between them.
 After that, we construct a smooth Riemannian manifold with nonnegative curvature that contains an isometric copy of $U$.
 
-\begin{wrapfigure}{r}{30mm}
-\vskip-0mm
+\begin{wrapfigure}[8]{r}{30mm}
+\vskip-9mm
 \centering
 \includegraphics{mppics/pic-510}
 \end{wrapfigure}
@@ -483,7 +484,7 @@ This case is even simpler --- we can choose one plane that contains $\tilde p$, 
 \end{minipage}
 \end{figure}
 
-Now, suppose exactly two ellipsoids are degenerate, note that it cannot be $P$.
+Now, suppose exactly two ellipsoids are degenerate; note that in this case $P$ is nondegenerate.
 Therefore we can assume that $X_1$ and $X_2$ are degenerate.
 In this case, we can assume that $\tilde s\in[\tilde x_1,\tilde x_2]$;
 if not we can slightly move $\tilde s$ toward to $\tilde x_1$ and $\tilde x_2$ making $X_1$ and $X_2$ nondegenerate and keeping the rest properties of~$\tilde s$.
@@ -532,7 +533,7 @@ Observe that $F$ has tense set $abc$ if and only if
 \end{wrapfigure}
 
 On the diagrams, we will connect three-point tense sets by a smooth curve so that the center is in the middle.
-For example, the given diagram describes a metric on $\{a,b,c,d,e\}$ with five tense sets $abc$, $bcd$, $cda$, $dae$, $aec$.
+For example, the given diagram corresponds to a metric on $\{a,b,c,d,e\}$ with five tense sets $abc$, $bcd$, $cda$, $dae$, $aec$.
 
 }
 
@@ -562,7 +563,7 @@ one of the following three tense-set configurations:
 \end{thm}
 
 In the following proof we use only small part of the classification in Lemma~\ref{lem:key}.
-Namely, we use that if it is note the first case in the lemma, then there are two tense sets with shared center.  
+Namely, we use that if it is not the first case in the lemma, then there are two tense sets with shared center.  
 However, the proof of this \emph{small part} takes nearly as long as the complete classification.
 
 \begin{wrapfigure}{r}{20mm}
@@ -579,14 +580,14 @@ for any $i\pmod 5$.
 In this case, $F$ is isometric to a 5-point subset in the circle of length 
 $\ell=|x_1-x_2|_F+\dots+|x_4-x_5|_F+|x_5-x_1|_F$.
 
-By the key lemma, it remains to consider the case with two tense triples with a common center.
-Let us relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2$ and $w_1xw_2$.
-
 \begin{wrapfigure}{r}{25mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-209}
 \end{wrapfigure}
+
+By the key lemma, it remains to consider the case with two tense triples with a common center.
+Let us relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2$ and $w_1xw_2$.
 
 First, we construct an Alexandrov space $L$ --- a disc triangulated by four triangles with vertices $\hat x$, $\hat v_1$, $\hat v_2$, $\hat w_1$, $\hat w_2$ as shown on the diagram.
 Each of the four triangles has a flat metric with at most one singular point;
@@ -634,6 +635,28 @@ The next group of conditions has eight comparisons:
 \leqno({*}{*})
 \]
 for any $i$.
+Finally, we need a group of eight identities:
+\[
+\begin{aligned}
+\measuredangle \hinge {\hat v_i}{\hat x}{\hat w_1}
++\measuredangle \hinge {\hat v_i}{\hat x}{\hat w_2}
+&=\angk{v_i}{w_1}{w_2},
+&
+\measuredangle \hinge {\hat w_i}{\hat x}{\hat v_1}
++\measuredangle \hinge {\hat w_i}{\hat x}{\hat v_2}
+&=\angk{w_i}{v_1}{v_2},
+\\
+\measuredangle \hinge {\hat x}{\hat v_i}{\hat w_1}
++\measuredangle \hinge {\hat x}{\hat v_i}{\hat w_2}
+&=\pi,
+&
+\measuredangle \hinge {\hat x}{\hat w_i}{\hat v_1}
++\measuredangle \hinge {\hat x}{\hat w_i}{\hat v_2}
+&=\pi,
+\end{aligned}
+\leqno(\asterism)
+\]
+
 These conditions imply that $\iota$ preserves the distance between two remaining pairs $(v_1,v_2)$ and $(w_1,w_2)$.
 Indeed, suppose that a minimizing geodesic $\gamma$ from $\hat v_1$ to $\hat v_2$ is shorter than $|v_1-v_2|_F$.
 Since two edges $\hat v_1\hat x$ and $\hat x\hat v_2$ have total length $|v_1-v_2|_F$,
@@ -656,9 +679,12 @@ We have the following 4 options:
 \ 
 
 Both points $z_1$ and $z_2$ lie on the left side from $\gamma$.
-In this case, the statement follows from two inequalities in $({*})$; namely
-\[\measuredangle \hinge {\hat x}{\hat v_i}{\hat w_1}\ge \angk{x}{v_i}{w_1}\]
-for both choices of $i$.
+In this case, the statement follows from 
+\[\measuredangle \hinge {\hat x}{\hat w_1}{\hat v_1}
++\measuredangle \hinge {\hat x}{\hat w_1}{\hat v_2}
+=\pi\]
+in 
+$(\asterism)$.
 
 \ 
 
@@ -678,9 +704,14 @@ for both choices of $i$.
 \ 
 
 Both points $z_1$ and $z_2$ lie on the right side from $\gamma$.
-In this case, the statement follows from two inequalities in $({*})$; namely
-\[\measuredangle \hinge {\hat w_1}{\hat v_i}{\hat x}\ge \angk{w_1}{v_i}{x}\]
-for both choices of $i$.
+In this case, the statement follows from 
+\[
+\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_1}
++\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_2}
+=\angk{w_1}{v_1}{v_2},
+\]
+in 
+$(\asterism)$.
 
 \ 
 
@@ -733,7 +764,7 @@ In this case, the statement follows from an inequality in $({*}{*})$; namely
 \hline
 \end{longtable}
 
-We need one more group of conditions:
+Note also that $(\asterism)$ implies that the total angle around $\hat x$ in $L$ is $2\cdot\pi$ and
 \[
 \measuredangle \hinge {\hat v_i}{\hat x}{\hat w_1}
 +\measuredangle \hinge {\hat v_i}{\hat x}{\hat w_2}
@@ -742,10 +773,10 @@ We need one more group of conditions:
 \measuredangle \hinge {\hat w_i}{\hat x}{\hat v_1}
 +\measuredangle \hinge {\hat w_i}{\hat x}{\hat v_2}
 \le \pi.
-\leqno(\asterism)
 \]
 for any $i$.
-These inequalities in $(\asterism)$ imply that $L$ has a convex boundary, and therefore, it is an Alexandrov space with nonnegative curvature.
+In particular $L$ is locally $\CBB(0)$,
+and by the globalization theorem, it is an Alexandrov space with nonnegative curvature.
 
 \parit{Step 2.}
 In this step we show that the 12 angles can be chosen so that they meet all the conditions $({*})$, $({*}{*})$, and $(\asterism)$.
@@ -772,7 +803,7 @@ Set
 =
 \measuredangle \hinge {\tilde x}{\tilde v_i}{\tilde w_j}\]
 for all $i$ and $j$.
-Evidently, this choice meets four conditions in $({*})$.
+Evidently, this choice meets four conditions in $({*})$ and half of the identities in $(\asterism)$.
 
 We still need to choose the remaining 8 angles $\measuredangle \hinge {\hat v_i}{\hat w_j}{\hat x}$ and $\measuredangle \hinge {\hat w_j}{\hat v_i}{\hat x}$ for all $i$ and $j$.
 To do this we will extend the configuration $\tilde x,\tilde v_1,\tilde v_2,\tilde w_1,\tilde w_2$ by 8 more points 
@@ -806,7 +837,7 @@ Suppose $\triangle \tilde s\tilde w_1 \tilde w_2$ is a model triangle for $\tria
 Then $\ell$ is the perpendicular bisector of $[\tilde v_1, \tilde s]$.
 Since $|\tilde w_i-\tilde v_1|\ge | w_i- v_1|=|\tilde w_i-\tilde s|$ the points $\tilde w_1$ and $\tilde w_2$ lie on the opposite side from $\tilde v_1$ with respect to $\ell$.
 Whence the conditions on $\tilde w_{21}$ and $\tilde w_{22}$ follow.
-In addition, by construction, we get $(\asterism)$ at $\tilde v_2$.
+In addition, by construction, we get one the identities in $(\asterism)$ with base point $v_2$.
 
 Similarly, we construct the remaining 6 points.
 
@@ -852,12 +883,12 @@ This search is sketched on the following diagram that needs some explanation.
 \includegraphics{mppics/pic-210}
 \end{figure}
 We start with a configuration with one triple marked by a solid line.
-Chose a pair that is not in any triple of configuration;
+Choose a pair that is not in any triple of configuration;
 connect it by a dashed line and search for an extra triple with this pair inside.
 Each time we need to check up to 9 triples that contain the pair --- 3 choices for extra points and 3 choices for the center in the obtained triple.
 Some of them make a $P$ or $Y$ configuration with an existing triple, so they cannot be added.
 If some of them can be added, then we draw a new diagram connected by an arrow and continue.
-In many cases, symmetry might be used to reduce the number of cases.
+In many cases, symmetry reduces the number of cases.
  
 
 If there are no free pairs (these are \ref{a(bcd)e+bcd}, \ref{abcdead}, \ref{abcda+aec+bed}, and \ref{abcdab+aec+bed}),
@@ -1256,7 +1287,7 @@ $D_4$
 \\ 
 \hline
 \end{longtable}
-\qeds
+\qedsf
 
 \section{Final remarks}
 
@@ -1266,12 +1297,12 @@ but Question~6.3 in \cite{lebedeva-petrunin} might be an appropriate analog.
 
 An analogous problem for 5-point sets in nonpositively curved spaces was solved by Tetsu Toyoda \cite{toyoda}; another solution is given in \cite{lebedeva-petrunin}.
 The 6-point case is open;
-Question 6.1 in \cite{lebedeva-petrunin} might be an answer.
+see  \cite[Question 6.1]{lebedeva-petrunin} and a partial answer in \cite{lebedeva-petrunin-octahedron}.
 
 {
 
 \begin{wrapfigure}{r}{30mm}
-\vskip-6mm
+\vskip-3mm
 \centering
 \includegraphics{mppics/pic-501}
 \end{wrapfigure}
@@ -1314,6 +1345,7 @@ The 5-point tense set can be solved following our argument in \ref{prop:4-tense}
 At the moment we do not see a way to do the 6- and 4-point tense sets.
 
 It might be interesting to find conditions on finite subsets of metric spaces that are related to other curvature bounds as, for example, nonnegative curvature operator or nonnegative isotropic curvature; see \cite[1.19$_+(e)$]{gromov}.
+According to \cite{lebedeva-petrunin-graph-alex}, graph comparison can be used to describe conditions that are stronger that nonnegative or nonpositive in the sense of Alexandov, but nonnegative curvature operator has a chance to be described this way.
 
 \switch{}{
 \section*{Compliance with Ethical Standards}
