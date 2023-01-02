@@ -817,7 +817,7 @@ draw z.a15..z.e15..z.c15;
 draw z.d15..z.e15..z.b15;
 dOt z.a15,z.b15,z.c15,z.d15,z.e15;
 
-label.lrt(btex {\footnotesize $15$} etex, (0,2));
+label.lrt(btex {\footnotesize $15$} etex, (-.5,2));
 );
 
 z.shift1015=(4,-4)*u;
