@@ -511,6 +511,30 @@ draw s1;
 
 endfig;
 
+beginfig(206)
+save u,p;
+path p[];
+u:=1cm;
+
+z.v1=(2-.3,0)*u;
+z.w1=(0,1)*u;
+z.x=(2,2)*u;
+z.v2=(2-1.8,3)*u;
+
+draw z.v1--z.w1--z.x--z.v2;
+arcs (z.v1,z.w1,z.x,10);
+arcs (z.w1,z.x,z.v2,10);
+
+dOt z.v1, z.w1, z.x, z.v2;
+
+label.rt(btex $\tilde v_1$ etex, z.v1);
+label.lft(btex $\tilde w_1$ etex, z.w1);
+label.rt(btex $\tilde x$ etex, z.x);
+label.lft(btex $\tilde v_2$ etex, z.v2);
+label.rt(btex $=\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_1}$ etex, z.w1+(10,0));
+label.lft(btex $\measuredangle \hinge {\hat x}{\hat v_2}{\hat w_1}=$ etex, z.x+(-10,0));
+endfig;
+
 beginfig(207)
 save u,p;
 path p[];
@@ -846,6 +870,43 @@ drawarrow ddline(z.shift2+z.shift26+z.shift610+z.shift1015,z.shift2+z.shift26+z.
 
 endfig;
 
+beginfig(255) 
+save u,p;
+path p[];
+u:=1cm;
+picture s[];
+
+z.x=origin;
+z.v1=(1,0)*u;
+z.v2=-1.2*z.v1;
+z.w1=(.2,1)*u;
+z.w2=-.9*z.w1;
+z.s=.5[z.w2,.5*z.v1];
+z.m=.5[z.v2,z.s];
+z.l=z.m+(z.s-z.v2) zscaled (0,1.4);
+z.r=z.m+(z.s-z.v2) zscaled (0,-.7);
+z.w21 =z.w1 reflectedabout(z.r, z.l);
+z.w22 =z.w2 reflectedabout(z.r, z.l);
+
+draw z.v1--z.v2;
+draw z.w1--z.w2;
+draw z.w1--z.s--z.w2 dashed evenly;
+draw z.l--z.r  dashed linedot;
+draw z.w21--z.v2--z.w22;
+
+dOt z.x, z.v1, z.v2, z.w1, z.w2, z.s, z.w21, z.w22;
+
+label.ulft(btex $\tilde x$ etex, z.x);
+label.rt(btex $\tilde v_1$ etex, z.v1);
+label.lft(btex $\tilde v_2$ etex, z.v2);
+label.urt(btex $\tilde w_1$ etex, z.w1);
+label.bot(btex $\tilde w_2$ etex, z.w2);
+label.top(btex $\tilde w_{21}$ etex, z.w21);
+label.bot(btex $\tilde w_{22}$ etex, z.w22);
+label.rt(btex $\tilde s$ etex, z.s);
+label.llft(btex $\ell$ etex, z.r);
+endfig;
+
 beginfig(301) 
 save u,p;
 path p[];
@@ -1039,42 +1100,7 @@ draw s7;
 
 endfig;
 
-beginfig(255) 
-save u,p;
-path p[];
-u:=1cm;
-picture s[];
 
-z.x=origin;
-z.v1=(1,0)*u;
-z.v2=-1.2*z.v1;
-z.w1=(.2,1)*u;
-z.w2=-.9*z.w1;
-z.s=.5[z.w2,.5*z.v1];
-z.m=.5[z.v2,z.s];
-z.l=z.m+(z.s-z.v2) zscaled (0,1.4);
-z.r=z.m+(z.s-z.v2) zscaled (0,-.7);
-z.w21 =z.w1 reflectedabout(z.r, z.l);
-z.w22 =z.w2 reflectedabout(z.r, z.l);
-
-draw z.v1--z.v2;
-draw z.w1--z.w2;
-draw z.w1--z.s--z.w2 dashed evenly;
-draw z.l--z.r;
-draw z.w21--z.v2--z.w22;
-
-dOt z.x, z.v1, z.v2, z.w1, z.w2, z.s, z.w21, z.w22;
-
-label.ulft(btex $\tilde x$ etex, z.x);
-label.rt(btex $\tilde v_1$ etex, z.v1);
-label.lft(btex $\tilde v_2$ etex, z.v2);
-label.urt(btex $\tilde w_1$ etex, z.w1);
-label.bot(btex $\tilde w_2$ etex, z.w2);
-label.top(btex $\tilde w_{21}$ etex, z.w21);
-label.bot(btex $\tilde w_{22}$ etex, z.w22);
-label.rt(btex $\tilde s$ etex, z.s);
-label.llft(btex $\ell$ etex, z.r);
-endfig;
 
 beginfig(308) 
 save u,p;
@@ -1531,6 +1557,31 @@ dOt z.a2,z.b2,z.c2,z.d2;
 );
 
 draw s2 shifted ((3,0)*u);
+endfig;
+
+beginfig(506)
+save u,p,h;
+path p[];
+u:=1cm;
+h=.25*u;
+
+z.s=origin;
+z.x1=(.1,.8)*u;
+z.x2=(1,-.5)*u;
+z.x3=(-1,-.5)*u;
+z.p=(0,-.1)*u;
+p1=circle(origin,sqrt(abs(z.x1)**2+h**2)) rotated angle(z.x1-z.x3) shifted z.x1 ;
+
+draw z.x1--z.x2--z.x3--cycle;
+draw p1 cutafter (z.x1--z.x1+3*(z.x1-z.x2)) pensemibold;
+
+dOt z.x1,z.x2, z.x3, z.p;
+
+label.top(btex $x_1$ etex, z.x1);
+label.rt(btex $x_2$ etex, z.x2);
+label.lft(btex $x_3$ etex, z.x3);
+label.rt(btex $p$ etex, z.p);
+label.top(btex $\Gamma_1$ etex, point .2 of p1);
 endfig;
 
 beginfig(510)

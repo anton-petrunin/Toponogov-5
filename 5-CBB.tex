@@ -95,7 +95,7 @@ The (\textit{n}+1)-comparison is another condition that holds for any $(n+1)$-po
 It says that given a point array $p,x_1,\dots,x_n$ in a nonnegatively curved Alexandrov space $A$ 
 there is an array $\tilde p,\tilde x_1,\dots,\tilde x_n$ in a Hilbert space $\HH$ such that 
 \[
-|\tilde p-\tilde x_j|_{\HH}=|p-x_i|_{A}
+|\tilde p-\tilde x_i|_{\HH}=|p-x_i|_{A}
 \quad
 \text{and}
 \quad
@@ -126,22 +126,32 @@ The following proof is nearly identical to the proof of Proposition 4.1 in \cite
 Suppose $p,x_1,\dots,x_4$ satisfies $\LSS(4)$;
 we need to show that it also meets the (4+1)-comparison.
 
-Choose a smooth function $\phi\:\RR\to \RR$ such that $\phi(x)=0$ is $x\ge0$ and $\phi(x)>0$, $\phi'(x)<0$ if $x<0$.
+Choose a smooth function $\phi\:\RR\to \RR$ such that $\phi(x)=0$ if $x\ge0$ and $\phi(x)>0$, $\phi'(x)<0$ if $x<0$.
 Consider a configuration of points $\tilde p,\tilde x_1,\dots,\tilde x_4\in \HH$ such that 
 \[
-|\tilde p-\tilde x_j|_{\HH}=|p-x_i|_{A}.
+|\tilde p-\tilde x_i|_{\HH}=|p-x_i|_{A}
 \]
-and has minimal value
+and the  value
 \[
-s=\sum_{i<j}\phi(|\tilde x_i-\tilde x_j|_{\HH}- |x_i-x_j|_{A}).
+s=\sum_{i<j}\phi(|\tilde x_i-\tilde x_j|_{\HH}- |x_i-x_j|_{A})
 \]
+is minimal.
 Note that $s\ge0$;
 if $s=0$, then we get the required configuration.
 
 Suppose $s>0$.
 Consider the graph $\Gamma$ with 4 vertices labeled by $\tilde x_1,\tilde x_2,\tilde x_3,\tilde x_4$ such that 
 $(\tilde x_i,\tilde x_j)$ is an edge if and only if $|\tilde x_i-\tilde x_j|_{\HH}<|x_i-x_j|_{A}$.
-By the triangle inequality, $\Gamma$ contains no end-vertices.
+If $\tilde x_1$ has a single edge $(\tilde x_1,\tilde x_2)$, then 
+\begin{align*}
+|\tilde x_1-\tilde x_2|_{\HH}&=|\tilde x_1-\tilde p|_{\HH}+|\tilde x_2-\tilde p|_{\HH}=
+\\
+&=| x_1- p|_{A}+| x_2- p|_{A}\ge
+\\
+&\ge |x_i-x_j|_{A}
+\end{align*}
+--- a contradiction.
+It follows that $\Gamma$ contains no end-vertices.
 Therefore it is isomorphic to one of four graphs on the diagram.
 
 \begin{figure}[ht!]
@@ -152,8 +162,8 @@ Therefore it is isomorphic to one of four graphs on the diagram.
 Without loss of generality, we can assume that $\tilde p=0$.
 Note that any point $\tilde x_i$ cannot lie in an open half-space with all its
 adjacent points.
-Indeed, if it would be the case, then we could slightly move this
-vertex increasing the distances to all its adjacent vertexes;
+If not, then $\tilde x_i$ and all its adjacent points lie in a finite-dimensional half-space with boundary plane $\Pi$.
+Then rotating $\tilde x_i$  slightly around $\Pi$ will increase the distances from $\tilde x_i$ to all its adjacent vertices;
 so the value $s$ will decrease --- a contradiction.
 
 In the 6-edge case, $0$ lies in the convex hull of $\{\tilde x_1,\tilde x_2,\tilde x_3,\tilde x_4\}$.
@@ -201,7 +211,7 @@ For an $n$-point array, it implies that $W_{\bm{x}}(v)\ge 0$ for any vector $v$ 
 Consider the cone $K_n\subset \RR^{n-1}$ that contains lines $L$ that connect a point on a facet of $\triangle$ with its opposite vertex.
 Note that $K_3=\RR^2$, but for $n\ge 4$ the cone $K_n$ is a proper subset of $\RR^{n-1}$.
 
-The following claim is a reformulation Sturm--Lang--Shroeder inequalities for all relabeling of $\bm{x}$:
+The following claim is a reformulation of Lang--Schroeder--Sturm inequalities for all relabeling of $\bm{x}$:
 
 \begin{thm}{Claim}\label{clm:W(w)<0}
 Let $\bm{x}=(x_1,\dots,x_n)$ be an $n$-point array in an Alexandrov space with nonnegative curvature.
@@ -216,7 +226,7 @@ $(\tilde p,\tilde x_1,\dots,\tilde x_n)$ with center $p$.
 
 We say that an array $(p,x_1,\dots,x_n)$ is \emph{tense} with center $p$ if the comparison configuration $(\tilde p,\tilde x_1,\dots,\tilde x_n)$ is unique up to congruence and isometric to the original array.
 
-Note that if $(p,x_1,\dots,x_n)$ is \emph{tense}, then in its comparison configuration $\tilde p$ lies in the convex hull of the remaining points $\tilde x_1,\dots,\tilde x_n$.
+Note that if $(p,x_1,\dots,x_n)$ is tense, then in its comparison configuration $\tilde p$ lies in the convex hull of the remaining points $\tilde x_1,\dots,\tilde x_n$.
 In particular, 
 \[\sum_i\lambda_i\cdot (\tilde x_i-\tilde p)=0 \leqno({*})\]
 for some nonnegative coefficients $\lambda_1,\dots, \lambda_n$ such that $\lambda_1+\dots+\lambda_n=1$.
@@ -286,7 +296,7 @@ Choose a positive quadratic form $I$ and minimal $t>0$ such that
 for any $w\in K_5$.
 
 Note that for some $w\in K_5$, we have equality in $({*}{*})$.
-The metric on $\bm{x}$ that corresponds to the form $W_{\bm{x}}+U+t\cdot r$ satisfies all $\LSS(4)$ inequalities and
+The metric on $\bm{x}$ that corresponds to the form $W_{\bm{x}}+U+t\cdot I$ satisfies all $\LSS(4)$ inequalities and
 by \ref{clm:nondeg-tense}, it has a tense array with at least 3 points.
 However, since $t>0$, it has no 3-point tense arrays.
 
@@ -346,7 +356,7 @@ This case follows from in Proposition~\ref{prop:4-tense} below.
 
 \begin{thm}{Proposition}\label{prop:4-tense}
 Suppose that a 5-point metric space $F$ satisfies all Lang--Schroeder--Sturm inequalities and contains a 4-point tense set.
-Then $F$ is isometric to a subset of complete nonnegatively curved Riemannian manifold. 
+Then $F$ is isometric to a subset of а complete nonnegatively curved Riemannian manifold. 
 \end{thm}
 
 In the following proof, we first construct a nonnegatively curved Alexandrov space with an isometric copy of $F$ and then smooth it.
@@ -381,21 +391,27 @@ Further, let us show that there are points $\tilde q_1$, $\tilde q_2$, $\tilde q
 \leqno({*}{*})\]
 hold for all $i$ and $j$.
 
-Denote by $\Gamma_1$ the intersection of the circle with the angle vertical to the hinge $\hinge{\tilde x_2}{\tilde x_1}{\tilde x_3}$.
+\begin{wrapfigure}{r}{30mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-506}
+\end{wrapfigure}
+
+By these conditions, $\tilde q_1$ must lie on the circle with center at $x_1$ and radius $|x_1-q|_F$.
+Denote by $\Gamma_1$ the intersection of this circle with the angle vertical to the hinge $\hinge{\tilde x_1}{\tilde x_2}{\tilde x_3}$.
 Let us show that $\tilde q_1$ can be chosen on $\Gamma_1$.
 The point $\tilde q_1$ has to satisfy additional three conditions:
-\[\measuredangle\hinge{\tilde x_1}{\tilde x_2}{\tilde q_1}\ge \angk{x_1}{x_2}{q},
+\[\measuredangle\hinge{\tilde x_1}{\tilde x_i}{\tilde q_1}\ge \angk{x_1}{x_i}{q},
 \qquad
-\measuredangle\hinge{\tilde x_1}{\tilde x_3}{\tilde q_1}\ge \angk{x_1}{x_3}{q},
-\qquad
-\measuredangle\hinge{\tilde x_1}{\tilde p}{\tilde q_1}\ge \angk{x_1}{p}{q}.\]
-Each condition describes a subarc of the of $\Gamma_1$, say $\breve{X}_{1,2}$, $\breve{X}_{1,3}$, and $\breve{P}_{1}$.
+\measuredangle\hinge{\tilde x_1}{\tilde p}{\tilde q_1}\ge \angk{x_1}{p}{q}\]
+for $i=2$ and $i=3$.
+Each condition describes a subarc of $\Gamma_1$, say $\breve{X}_{1,2}$, $\breve{X}_{1,3}$, and $\breve{P}_{1}$.
 
 By the construction and comparison we have 
 \begin{align*}
 \angk{x_1}{q}{x_2}+\angk{x_1}{q}{x_3}&+\angk{x_1}{x_2}{x_3}\le 2\cdot\pi,
 \\
-\angk{x_1}{q}{p}+\angk{x_1}{q}{x_2}&+\angk{x_1}{p}{x_2}\le 2\cdot\pi,
+\angk{x_1}{q}{p}+\angk{x_1}{q}{x_i}&+\angk{x_1}{p}{x_i}\le 2\cdot\pi,
 \\
 \angk{x_1}{x_2}{x_3}=\measuredangle\hinge{\tilde x_1}{\tilde x_2}{\tilde x_3},
 \qquad
@@ -452,7 +468,7 @@ After that, we construct a smooth Riemannian manifold with nonnegative curvature
 \parit{Step 1.}
 Consider the four ellipsoids $P$, $X_1$, $X_2$, $X_3$ with the major axes $|q-p|$, $|q-x_1|$, $|q-x_2|$,$|q-x_3|$, first focus at $\tilde s$, and the second focus at $\tilde p$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ respectively.
 
-The construction of the facets of $V$ above implies that for each ellipsoid has a tangent plane that contains all the ellipsoids on one side --- these planes are the perpendicular bisectors to $[\tilde s,\tilde q]$ and $[\tilde s,\tilde q_i]$ for all $i$.
+The construction of the facets of $V$ above implies that each ellipsoid has a tangent plane that contains all the ellipsoids on one side --- these planes are the perpendicular bisectors to $[\tilde s,\tilde q]$ and $[\tilde s,\tilde q_i]$ for all $i$.
 Note that any choice of such planes do the trick --- they can be used instead of perpendicular bisectors discussed above.
 These planes will be called \emph{$p$-plane} and \emph{$x_i$-planes} respectively.
 We need to choose them so that no pair of these planes pass thru $\tilde p$, $\tilde x_1$, $\tilde x_2$, or $\tilde x_3$.
@@ -516,8 +532,8 @@ In this case, the set $F$ remains isometrically embedded in the obtained 3-dimen
 
 \begin{thm}{Proposition}\label{prop:3-tense}
 Suppose that an extremal 5-point metric space $F$ contains only 3-point tense sets.
-Then $F$ is isometric to a subset in a nonnegatively curved Riemannian manifold.
-Moreover, we can assume that $L$ is homeomorphic to a circle or the plane.
+Then $F$ is isometric to a subset in a nonnegatively curved Riemannian manifold $L$.
+Moreover, we can assume that $L$ is homeomorphic to a circle or а plane.
 \end{thm}
 
 A three-point tense set $\{a,b,c\}$ with center $b$ will be briefly denoted by $abc$.
@@ -580,17 +596,18 @@ for any $i\pmod 5$.
 In this case, $F$ is isometric to a 5-point subset in the circle of length 
 $\ell=|x_1-x_2|_F+\dots+|x_4-x_5|_F+|x_5-x_1|_F$.
 
+Once this case is excluded, by the key lemma, we can assume that two tense triples in $F$ have a common center.
+Let us relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2$ and $w_1xw_2$.
+
 \begin{wrapfigure}{r}{25mm}
-\vskip-4mm
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-209}
 \end{wrapfigure}
 
-By the key lemma, it remains to consider the case with two tense triples with a common center.
-Let us relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2$ and $w_1xw_2$.
-
-First, we construct an Alexandrov space $L$ --- a disc triangulated by four triangles with vertices $\hat x$, $\hat v_1$, $\hat v_2$, $\hat w_1$, $\hat w_2$ as shown on the diagram.
-Each of the four triangles has a flat metric with at most one singular point;
+First, we construct an Alexandrov space $L$ --- a flat disc with at most four singular points.
+The disc $L$ will be triangulated by four triangles with vertices $\hat x$, $\hat v_1$, $\hat v_2$, $\hat w_1$, $\hat w_2$ as shown on the diagram.
+Each of the four triangles has at most one singular point;
 in other words, each triangle is a solid geodesic triangle in a cone.
 The sides of the triangles are the same as in $F$.
 
@@ -601,9 +618,9 @@ By construction, $\iota$ is distance-nonexpanding; therefore we only need to sho
 This part is divided into two steps.
 
 \parit{Step 1.}
-In this step, we describe three groups of conditions on these 12 angles and show that together they guarantee that $L$ has nonnegative curvature in the sense of Alexandrov and $\iota$ is distance-preserving.
+In this step, we describe three groups of conditions on these 12 angles and show that together they guarantee that $L$ has nonnegative curvature in the sense of Alexandrov and $\iota$ is distance-noncontracting.
 
-First we need that the 12 angles of the triangles are at least as large as the corresponding model angles;
+First we need to assume that the 12 angles of the triangles are at least as large as the corresponding model angles;
 that is,
 \[
 \measuredangle \hinge {\hat x}{\hat v_i}{\hat w_j}\ge \angk{x}{v_i}{w_j}, 
@@ -613,12 +630,18 @@ that is,
 \measuredangle \hinge {\hat w_j}{\hat x}{\hat v_i}\ge \angk{w_j}{x}{v_i},\leqno({*})
 \]
 for all $i$ and $j$.
-Note that this condition implies that each edge of the triangulation is a convex set in $L$.
-In particular, it implies that $\iota$ preserves the distances between all pairs $(x,v_i)$, $(x,w_j)$, and $(v_i,w_j)$ for all $i$ and $j$.
-Moreover, it implies that any minimizing geodesic in $L$ may cross an edge $xv_i$ or $xw_j$ at most once.
+%Note that this condition implies that each edge of the triangulation is a convex set in $L$.
+%In particular, it implies that $\iota$ preserves the distances between all pairs $(x,v_i)$, $(x,w_j)$, and $(v_i,w_j)$ for all $i$ and $j$.
+%Moreover, it implies that any minimizing geodesic in $L$ may cross an edge $[\hat x,\hat v_i]$ or $[\hat x,\hat w_j]$ at most once.
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-206}
+\end{wrapfigure}
 
 Further, choose a three-edge path in the triangulation connecting $v_1$ to $v_2$ (or $w_1$ to $w_2$), say $v_1w_1xv_2$.
-Consider the polygonal line in the plane $\tilde v_1\tilde w_1\tilde x\tilde v_2$ with the same angles and sides as in $L$ such that $\tilde v_1$ and $\tilde v_2$ lie on the opposite sides from the line $\tilde w_1\tilde x$.
+Consider the plane polygonal line $\tilde v_1\tilde w_1\tilde x\tilde v_2$ with the same angles and sides as in $L$ such that $\tilde v_1$ and $\tilde v_2$ lie on the opposite sides from the line $\tilde w_1\tilde x$.
 Set 
 \[\tilde Z(v_1w_1xv_2)\df |\tilde v_1-\tilde v_2|.\]
 The next group of conditions has eight comparisons:
@@ -630,7 +653,7 @@ The next group of conditions has eight comparisons:
 \\
 |w_1- w_2|&\le \tilde Z(w_1v_ixw_2),
 &
-|w_1- w_2|&\le \tilde Z(w_1xv_iw_2).
+|w_1- w_2|&\le \tilde Z(w_1xv_iw_2)
 \end{aligned}
 \leqno({*}{*})
 \]
@@ -652,13 +675,24 @@ Finally, we need a group of eight identities:
 &
 \measuredangle \hinge {\hat x}{\hat w_i}{\hat v_1}
 +\measuredangle \hinge {\hat x}{\hat w_i}{\hat v_2}
-&=\pi,
+&=\pi
 \end{aligned}
 \leqno(\asterism)
 \]
+for any $i$.
 
-These conditions imply that $\iota$ preserves the distance between two remaining pairs $(v_1,v_2)$ and $(w_1,w_2)$.
-Indeed, suppose that a minimizing geodesic $\gamma$ from $\hat v_1$ to $\hat v_2$ is shorter than $|v_1-v_2|_F$.
+Let us show that these conditions imply that $\iota$ distance-noncontracting.
+Suppose $\gamma$ is a curve from $\hat x$ to $\hat v_i$ that lies completely in one of triangles adjacent to the edge $\hat x \hat v_i$.
+Note that the inequalities in $({*})$ imply that 
+\[\length \gamma\ge | x -\hat v_i|_F.\]
+Further, the same holds for any pair $(\hat x,\hat w_i)$ and $(\hat v_i,\hat w_j)$.
+It implies that minimizing geodesic from $x$ to any point on four edges $\hat x \hat v_i$ or $\hat x \hat w_i$ runs in the corresponding edge; in particular, we have 
+\[|x- v_i|_F=|\hat x- \hat v_i|_L\qquad\text{and}\qquad |x- w_i|_F=|\hat x- \hat w_i|_L\]
+for each $i$.
+We also get that each of four edges $\hat x \hat v_i$ or $\hat x \hat w_i$ is a convex set in $L$;
+in particular, each of these edges can be crossed at most once by a shortest path in $L$. 
+
+Suppose that there is a curve $\gamma$ from $\hat v_1$ to $\hat v_2$ that is shorter than $|v_1-v_2|_F$.
 Since two edges $\hat v_1\hat x$ and $\hat x\hat v_2$ have total length $|v_1-v_2|_F$,
 we can assume that $\gamma$ runs in a pair of two adjacent triangles, say $[\hat v_1\hat x\hat w_1]$ and $[\hat v_2\hat x\hat w_1]$.
 From above $\gamma$ cross the edge $\hat x\hat w_1$ once.
@@ -678,8 +712,8 @@ We have the following 4 options:
 
 \ 
 
-Both points $z_1$ and $z_2$ lie on the left side from $\gamma$.
-In this case, the statement follows from 
+If points $z_1$ and $z_2$ lie on the left side from $\gamma$,
+then we arrive at a contradiction with
 \[\measuredangle \hinge {\hat x}{\hat w_1}{\hat v_1}
 +\measuredangle \hinge {\hat x}{\hat w_1}{\hat v_2}
 =\pi\]
@@ -703,8 +737,8 @@ $(\asterism)$.
 
 \ 
 
-Both points $z_1$ and $z_2$ lie on the right side from $\gamma$.
-In this case, the statement follows from 
+If points $z_1$ and $z_2$ lie on the right side from $\gamma$,
+then we arrive at a contradiction with
 \[
 \measuredangle \hinge {\hat w_1}{\hat x}{\hat v_1}
 +\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_2}
@@ -730,10 +764,10 @@ $(\asterism)$.
 
 \ 
 
-Points $z_1$ lies on the left side from $\gamma$, 
-and $z_2$ lies on its right side.
-In this case, the statement follows from an inequality in $({*}{*})$; namely
-\[|v_1- v_2|\le \tilde Z(v_1xw_1v_2).\]
+If $z_1$ lies on the left side from $\gamma$, 
+and $z_2$ lies on its right side, then we arrive at a contradiction with 
+\[|v_1- v_2|\le \tilde Z(v_1xw_1v_2)\]
+in $({*}{*})$.
 
 \ 
 
@@ -752,10 +786,10 @@ In this case, the statement follows from an inequality in $({*}{*})$; namely
 
 \ 
 
-Points $z_1$ lies on the right side from $\gamma$, 
-and $z_2$ lies on its left side.
-In this case, the statement follows from an inequality in $({*}{*})$; namely
-\[|v_1- v_2|\le \tilde Z(v_1w_1xv_2).\]
+If $z_1$ lies on the right side from $\gamma$, 
+and $z_2$ lies on its left side, then we arrive at a contradiction with
+\[|v_1- v_2|\le \tilde Z(v_1w_1xv_2)\]
+in $({*}{*})$.
 
 \ 
 
@@ -764,19 +798,35 @@ In this case, the statement follows from an inequality in $({*}{*})$; namely
 \hline
 \end{longtable}
 
-Note also that $(\asterism)$ implies that the total angle around $\hat x$ in $L$ is $2\cdot\pi$ and
+It shows that $\iota$ does not decrease the distance between $v_1$ and $v_2$;
+the same argument works for $w_1$ and $w_2$.
+Note that in addition we get that two edges $\hat v_1\hat x$ and $\hat x\hat v_2$ form a shortest path in $L$; the same holds for $\hat w_1\hat x$ and $\hat x\hat w_2$.
+
+Finally, suppose $\gamma$ is a curve from $\hat v_1$ to $\hat w_1$ that is shorter than $|v_1-w_1|_F$.
+From above it does not lie in the triangle $[\hat x\hat v_1\hat w_1]$.
+Recall that $\gamma$ crosses each of four edges $\hat x \hat v_i$ or $\hat x \hat w_i$ at most once.
+Therefore $\gamma$ have to cross edge $\hat x \hat v_2$.
+Since  $\hat v_1\hat x$ and $\hat x\hat v_2$ form a shortest path, we can assume that $\gamma$ visits $\hat x$ and so
+\[\length \gamma\ge |v_1-x|_F+|x-w_1|_F\ge |v_1-w_1|_F\]
+--- a contradiction.
+The same way we show that $\iota$ does not increase the distances for each pair $(v_i,w_j)$.
+
+It remains to show that $L$ is  Alexandrov space with nonnegative curvature.
+By $(\asterism)$ the total angle around $\hat x$ in $L$ is $2\cdot\pi$.
+Further, $(\asterism)$ implies that
 \[
 \measuredangle \hinge {\hat v_i}{\hat x}{\hat w_1}
 +\measuredangle \hinge {\hat v_i}{\hat x}{\hat w_2}
-\le \pi,
-\quad
+\le \pi
+\qquad\text{and}\qquad
 \measuredangle \hinge {\hat w_i}{\hat x}{\hat v_1}
 +\measuredangle \hinge {\hat w_i}{\hat x}{\hat v_2}
 \le \pi.
 \]
-for any $i$.
-In particular $L$ is locally $\CBB(0)$,
-and by the globalization theorem, it is an Alexandrov space with nonnegative curvature.
+for any $i$;
+that is, $L$ has convex boundary.
+In particular $L$ has locally nonnegative curvature.
+It remains to apply the globalization theorem \cite[8.32]{alexander2019alexandrov}. 
 
 \parit{Step 2.}
 In this step we show that the 12 angles can be chosen so that they meet all the conditions $({*})$, $({*}{*})$, and $(\asterism)$.
@@ -806,7 +856,7 @@ for all $i$ and $j$.
 Evidently, this choice meets four conditions in $({*})$ and half of the identities in $(\asterism)$.
 
 We still need to choose the remaining 8 angles $\measuredangle \hinge {\hat v_i}{\hat w_j}{\hat x}$ and $\measuredangle \hinge {\hat w_j}{\hat v_i}{\hat x}$ for all $i$ and $j$.
-To do this we will extend the configuration $\tilde x,\tilde v_1,\tilde v_2,\tilde w_1,\tilde w_2$ by 8 more points 
+To do this, we extend the configuration $\tilde x,\tilde v_1,\tilde v_2,\tilde w_1,\tilde w_2$ by 8 more points 
 $\tilde v_{ij}$, $\tilde w_{ij}$ so that we can set 
 \[
 \measuredangle \hinge {\hat v_i}{\hat w_j}{\hat x}=\measuredangle \hinge {\tilde v_i}{\tilde w_{ij}}{\tilde x},
@@ -826,16 +876,16 @@ The conditions $({*})$, and $({*}{*})$ will follow if we could choose the points
 \end{align*}
 here we assume that $j'\ne j$, so $2'=1$ and $1'=2$.
 
-\begin{wrapfigure}{r}{35mm}
-\vskip-4mm
+\begin{wrapfigure}{r}{33mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-255}
 \end{wrapfigure}
 
 The needed points $\tilde w_{21}$ and $\tilde w_{22}$ can be chosen to be reflections of $\tilde w_{1}$ and $\tilde w_{2}$ respectively across a line $\ell$ that we are about to describe.
-Suppose $\triangle \tilde s\tilde w_1 \tilde w_2$ is a model triangle for $\triangle v_2w_1w_2$ such that $\tilde s$ lies on the opposite side from $\tilde v_2$ with respect to the line $\tilde w_1\tilde w_2$.
-Then $\ell$ is the perpendicular bisector of $[\tilde v_1, \tilde s]$.
-Since $|\tilde w_i-\tilde v_1|\ge | w_i- v_1|=|\tilde w_i-\tilde s|$ the points $\tilde w_1$ and $\tilde w_2$ lie on the opposite side from $\tilde v_1$ with respect to $\ell$.
+Suppose $[\tilde s\tilde w_1 \tilde w_2]$ is a model triangle for $[v_2w_1w_2]$ such that $\tilde s$ lies on the opposite side from $\tilde v_2$ with respect to the line $\tilde w_1\tilde w_2$.
+Then $\ell$ is the perpendicular bisector of $[\tilde v_2, \tilde s]$.
+Since $|\tilde w_i-\tilde v_2|\ge | w_i- v_2|=|\tilde w_i-\tilde s|$ the points $\tilde w_1$ and $\tilde w_2$ lie on the opposite side from $\tilde v_2$ with respect to $\ell$.
 Whence the conditions on $\tilde w_{21}$ and $\tilde w_{22}$ follow.
 In addition, by construction, we get one the identities in $(\asterism)$ with base point $v_2$.
 
