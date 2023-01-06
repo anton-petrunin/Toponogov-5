@@ -50,7 +50,7 @@ Toponogov theorem provides an if-and-only-if condition on a metric on four-point
 The only-if part is proved by Toponogov, and the if part follows from a result of Abraham Wald \cite[\S 7]{wald}.
 
 We show that the so-called Lang--Schroeder--Sturm inequality is the analogous condition for five-point spaces.
-The only-if part is well known, but the if part is new.
+The only-if part is well-known, but the if part is new.
 It was hard to imagine some new restrictions, but now we know there are none.
 
 Let us formulate the Lang--Schroeder--Sturm inequality \cite{lang-schroeder, sturm}.
@@ -76,16 +76,16 @@ We already know that Lang--Schroeder--Sturm inequalities are necessary.
 It remains to construct a complete nonnegatively curved Riemannian manifold that contains an isometric copy of any given 5-point space satisfying the assumptions.
 We first construct an Alexandrov space with this property and then smooth it slightly keeping the required property.
 
-Our proof uses brute force search that was originally done on a computer.
+Our proof uses brute-force search that was originally done on a computer.
 We present a hand-made proof that was found later.
-It still based on brute force search, and we hope that a more conceptual proof will be found.
+It is still based on brute-force search, and we hope that a more conceptual proof will be found.
 Our paper is inspired by an unpublished note of Vladimir Zolotov and the first author;
 the results from this note are discussed briefly in the last section.
 
 \parbf{Acknowledgments.}
 We want to thank Arseniy Akopyan and Alexander Gil for helping us with programming.
 We would also like to thank Tetsu Toyoda for pointing out an error in the proof of Proposition~\ref{prop:3-tense}.
-The first author was partially supported by Russian Foundation for Basic Research grant 20-01-00070, 
+The first author was partially supported by Russian Foundation for Basic Research grant 20-01-00070; 
 the second author was partially supported by National Science Foundation grant DMS-2005279.
 
 \section{LSS(\textit{n}) and (\textit{n}+1)-comparison}
@@ -102,7 +102,7 @@ there is an array $\tilde p,\tilde x_1,\dots,\tilde x_n$ in a Hilbert space $\HH
 |\tilde x_i-\tilde x_j|_{\HH}\ge |x_i-x_j|_{A}.
 \]
 for all $i$ and $j$.
-The point $p$ will be called the \emph{center} of comparison.
+Point $p$ will be called the \emph{center} of comparison.
 
 For general metric spaces, the (\textit{n}+1)-comparison implies the Lang--Schroeder--Sturm inequality,  briefly $\LSS(n)$.
 For $n\ge 5$ the converse does not hold \cite[Section 8]{lebedeva-petrunin-zolotov}.
@@ -152,7 +152,7 @@ If $\tilde x_1$ has a single edge $(\tilde x_1,\tilde x_2)$, then
 \end{align*}
 --- a contradiction.
 It follows that $\Gamma$ contains no end-vertices.
-Therefore it is isomorphic to one of four graphs on the diagram.
+Therefore it is isomorphic to one of the four graphs on the diagram.
 
 \begin{figure}[ht!]
 \centering
@@ -208,7 +208,8 @@ the three triangle inequalities for the distances between $x_1$, $x_2$, and $x_3
 For an $n$-point array, it implies that $W_{\bm{x}}(v)\ge 0$ for any vector $v$ in a plane spanned by a triple of vertices of $\triangle$.
 
 \parbf{Lang--Schroeder--Sturm inequalities.}
-Consider the cone $K_n\subset \RR^{n-1}$ that contains lines $L$ that connect a point on a facet of $\triangle$ with its opposite vertex.
+Consider lines that connect a point on a facet of $\triangle$ with its opposite vertex.
+The union of these lines forms a cone in $\RR^{n-1}$; denote it by $K_n$.
 Note that $K_3=\RR^2$, but for $n\ge 4$ the cone $K_n$ is a proper subset of $\RR^{n-1}$.
 
 The following claim is a reformulation of Lang--Schroeder--Sturm inequalities for all relabeling of $\bm{x}$:
@@ -270,23 +271,23 @@ Note that any tense 3-point array is nondegenerate.
 A 4-point array $(p,x,y,z)$ is tense with center $p$ if there is an isometric comparison configuration $(\tilde p,\tilde x,\tilde y,\tilde z)$ with $\tilde p$ lying in the solid triangle $\tilde x\tilde y\tilde z$.
 Note that if $\tilde p$ lies in the interior of the solid triangle or the triangle is degenerate, then the array $(\tilde p,\tilde x,\tilde y,\tilde z)$ is nondegenerate.
 Otherwise, if $\tilde p$ lies on a side, say $[\tilde x,\tilde y]$ and the triangle $[\tilde x\tilde y\tilde z]$ is nondegenerate, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
-In the latter case the 3-point array $(\tilde p,\tilde x,\tilde y)$ is tense and nondegenerate.
+In the latter case, the 3-point array $(\tilde p,\tilde x,\tilde y)$ is tense and nondegenerate.
 
 \begin{thm}{Claim}\label{clm:10-2k}
 Let $\bm{x}=(x_1,\dots,x_5)$ be a 5-point array in a metric space that satisfies all $\LSS(4)$-inequalities.
-Suppose that $\bm{x}$ has $k$ three-point tense arrays, and no tense arrays with four and five points.
+Suppose that $\bm{x}$ has $k$ three-point tense arrays and no tense arrays with four and five points.
 If $k\le 4$ then there is a $2$-dimensional subspace $S$ of quadratic forms on $\RR^4$ such that for any form $U\in S$ that is sufficiently close to zero the array with associated form $W_{\bm{x}}+U$ satisfies all $\LSS(4)$-inequalities.
 \end{thm}
 
 \parit{Proof.}
 Given a tense three-point subarray of $\bm{x}$, say $(x_1,x_2,x_3)$, consider the metrics on $\bm{x}$ 
-such that the three distances between $x_1$, $x_2$, and $x_3$ are proportional to the original distances and the remaining distances are arbitrary.
+such that the three distances between $x_1$, $x_2$, and $x_3$ are proportional to the original distances, and the remaining distances are arbitrary.
 This set defines a subspace of quadratic forms of codimension 2 in the 10-dimensional space of quadratic forms on $\RR^4$.
 Since $k\le 4$, 
 taking the intersection of all such subspaces we get a subspace $S$ of dimension at least $2$.
 
 It remains to show that $S$ meets the claim --- assume not.
-That is, for arbitrary small $U\in S$ the metric on $\bm{x}$ defined by associated quadratic form $W_{\bm{x}}+U$ does not satisfy the $\LSS(4)$-inequality.
+That is, for arbitrary small $U\in S$ the metric on $\bm{x}$ defined by the associated quadratic form $W_{\bm{x}}+U$ does not satisfy the $\LSS(4)$-inequality.
 It means that there is a vector $w\in K_5$ such that 
 \[W_{\bm{x}}(w)+U(w)< 0.\]
 
@@ -301,9 +302,9 @@ by \ref{clm:nondeg-tense}, it has a tense array with at least 3 points.
 However, since $t>0$, it has no 3-point tense arrays.
 
 Choose an array $Q$ that remains to be tense as $U\to 0$. 
-Note that $Q$ is isometric to an array in the Euclidean space.
+Note that $Q$ is isometric to an array in Euclidean space.
 Since $W_{\bm{x}}+U+t\cdot I\to W_{\bm{x}}$ as $U\to 0$, the array $Q$ must contain one of the three-point tense arrays for the original metric.
-That is, one of the three-point arrays sits in a four-point array that is isometric to an array in the Euclidean space.
+That is, one of the three-point arrays sits in a four-point array that is isometric to an array in Euclidean space.
 It follows that there is a degenerate 4-point array for the original metric
 --- a contradiction.
 \qeds
@@ -345,7 +346,7 @@ the latter is impossible for an extremal metric.
 The remaining part of the proof is broken into cases:
 \begin{itemize}
 \item $F$ contains a 5-point tense set.
-In this case $F$ admits an isometric embedding into Euclidean space --- the problem is solved.
+In this case, $F$ admits an isometric embedding into Euclidean space --- the problem is solved.
 \item $F$ contains a 4-point  tense set.
 This case follows from in Proposition~\ref{prop:4-tense} below.
 \item $F$ contains only 3-point  tense sets. This is the hardest part of the proof; it follows from in Proposition~\ref{prop:3-tense}.
@@ -362,7 +363,7 @@ Then $F$ is isometric to a subset of а complete nonnegatively curved Riemannian
 In the following proof, we first construct a nonnegatively curved Alexandrov space with an isometric copy of $F$ and then smooth it.
 The space will be a doubling of a convex polyhedral set in $\RR^3$.
 
-Further we use notations
+We use notations
 \[\hinge xyz,\quad\measuredangle\hinge xyz,\quad\text{and}\quad \angk{x}{y}{z}\]
 for hinge, its angle measure, and the model angle respectively.
 
@@ -397,7 +398,7 @@ hold for all $i$ and $j$.
 \includegraphics{mppics/pic-506}
 \end{wrapfigure}
 
-By these conditions, $\tilde q_1$ must lie on the circle with center at $x_1$ and radius $|x_1-q|_F$.
+By these conditions, $\tilde q_1$ must lie on the circle with the center at $x_1$ and radius $|x_1-q|_F$.
 Denote by $\Gamma_1$ the intersection of this circle with the angle vertical to the hinge $\hinge{\tilde x_1}{\tilde x_2}{\tilde x_3}$.
 Let us show that $\tilde q_1$ can be chosen on $\Gamma_1$.
 The point $\tilde q_1$ has to satisfy additional three conditions:
@@ -455,7 +456,7 @@ By construction, the array $\hat p=\iota_1(\tilde p)$, $\hat x_1=\iota_1(\tilde 
 
 Finally, we need to show that the obtained space can be smoothed into a Riemannian manifold that still has an isometric copy of $F$.
 This part is divided into two steps; first, we show that the construction above can be made so that the points $\tilde s$, $\tilde p$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ do not lie on the edges of $V$.
-In this case, there is a complement, say $U$, of a neighborhood of the singular set in $W$ that contains
+In this case, there is a compliment, say $U$, of a neighborhood of the singular set in $W$ that contains
 the 5-point set together with all the geodesics between them.
 After that, we construct a smooth Riemannian manifold with nonnegative curvature that contains an isometric copy of $U$.
 
@@ -469,13 +470,13 @@ After that, we construct a smooth Riemannian manifold with nonnegative curvature
 Consider the four ellipsoids $P$, $X_1$, $X_2$, $X_3$ with the major axes $|q-p|$, $|q-x_1|$, $|q-x_2|$,$|q-x_3|$, first focus at $\tilde s$, and the second focus at $\tilde p$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ respectively.
 
 The construction of the facets of $V$ above implies that each ellipsoid has a tangent plane that contains all the ellipsoids on one side --- these planes are the perpendicular bisectors to $[\tilde s,\tilde q]$ and $[\tilde s,\tilde q_i]$ for all $i$.
-Note that any choice of such planes do the trick --- they can be used instead of perpendicular bisectors discussed above.
+Note that any choice of such planes does the trick --- they can be used instead of the perpendicular bisectors discussed above.
 These planes will be called \emph{$p$-plane} and \emph{$x_i$-planes} respectively.
 We need to choose them so that no pair of these planes pass thru $\tilde p$, $\tilde x_1$, $\tilde x_2$, or $\tilde x_3$.
 The latter is only possible if the corresponding ellipsoid degenerates to a line segment.
 
 We can assume that one of the ellipsoids is nondegenerate; otherwise, the array $\tilde p$, $\tilde q$, $\tilde x_1$, $\tilde x_2$, $\tilde x_3$ is isometric to $F$;
-in this case, $F$ is isometric to a subset of the Euclidean space.
+in this case, $F$ is isometric to a subset of Euclidean space.
 Further, if only one ellipsoid, say $X_1$ is degenerate, then we can move $\tilde s$ slightly making this ellipsoid nondegenerate and keeping the rest of its properties.
 So we can assume that three or two ellipsoids are degenerate.
 
@@ -503,7 +504,7 @@ This case is even simpler --- we can choose one plane that contains $\tilde p$, 
 Now, suppose exactly two ellipsoids are degenerate; note that in this case $P$ is nondegenerate.
 Therefore we can assume that $X_1$ and $X_2$ are degenerate.
 In this case, we can assume that $\tilde s\in[\tilde x_1,\tilde x_2]$;
-if not we can slightly move $\tilde s$ toward to $\tilde x_1$ and $\tilde x_2$ making $X_1$ and $X_2$ nondegenerate and keeping the rest properties of~$\tilde s$.
+if not we can slightly move $\tilde s$ toward $\tilde x_1$ and $\tilde x_2$ making $X_1$ and $X_2$ nondegenerate and keep the rest properties of~$\tilde s$.
 Since a focus of $P$ lies on $[\tilde x_1,\tilde x_2]$, we have that $x_1$-plane cannot be $x_2$-plane and the other way around.
 
 Suppose that $P$ does not lie in the convex hull of the remaining three ellipsoids
@@ -511,10 +512,10 @@ and the same holds for $X_3$ (middle picture).
 Then it is easy to make the required choice of planes.
 
 In the remaining case (see picture on the right), either $P$ or $X_3$ lies in the convex hull of the remaining three ellipsoids.
-Suppose it is $P$, draw a $p$-plane, note that it is also an $x_3$-plane;
+Suppose it is $P$, draw a $p$-plane; note that it is also an $x_3$-plane;
 it might be also $x_1$- or $x_2$-plane, but cannot be both.
 It remains to add $x_1$-plane and/or $x_2$-plane as needed.
-Since $x_1$-plane cannot be $x_2$-plane and the other way around, we will not get two planes passing thru $x_1$ or $x_2$.
+Since an $x_1$-plane cannot be $x_2$-plane and the other way around, we will not get two planes passing thru $x_1$ or $x_2$.
 
 The case when $X_3$ lies in the convex hull of the rest is identical.
 
@@ -578,8 +579,8 @@ one of the following three tense-set configurations:
 
 \end{thm}
 
-In the following proof we use only small part of the classification in Lemma~\ref{lem:key}.
-Namely, we use that if it is not the first case in the lemma, then there are two tense sets with shared center.  
+In the following proof, we use only a small part of the classification in Lemma~\ref{lem:key}.
+Namely, we use that if it is not the first case in the lemma, then there are two tense sets with a shared center.  
 However, the proof of this \emph{small part} takes nearly as long as the complete classification.
 
 \begin{wrapfigure}{r}{20mm}
@@ -620,7 +621,7 @@ This part is divided into two steps.
 \parit{Step 1.}
 In this step, we describe three groups of conditions on these 12 angles and show that together they guarantee that $L$ has nonnegative curvature in the sense of Alexandrov and $\iota$ is distance-noncontracting.
 
-First we need to assume that the 12 angles of the triangles are at least as large as the corresponding model angles;
+First, we need to assume that the 12 angles of the triangles are at least as large as the corresponding model angles;
 that is,
 \[
 \measuredangle \hinge {\hat x}{\hat v_i}{\hat w_j}\ge \angk{x}{v_i}{w_j}, 
@@ -682,7 +683,7 @@ Finally, we need a group of eight identities:
 for any $i$.
 
 Let us show that these conditions imply that $\iota$ distance-noncontracting.
-Suppose $\gamma$ is a curve from $\hat x$ to $\hat v_i$ that lies completely in one of triangles adjacent to the edge $\hat x \hat v_i$.
+Suppose $\gamma$ is a curve from $\hat x$ to $\hat v_i$ that lies completely in one of the triangles adjacent to the edge $\hat x \hat v_i$.
 Note that the inequalities in $({*})$ imply that 
 \[\length \gamma\ge | x -\hat v_i|_F.\]
 Further, the same holds for any pair $(\hat x,\hat w_i)$ and $(\hat v_i,\hat w_j)$.
@@ -695,7 +696,7 @@ in particular, each of these edges can be crossed at most once by a shortest pat
 Suppose that there is a curve $\gamma$ from $\hat v_1$ to $\hat v_2$ that is shorter than $|v_1-v_2|_F$.
 Since two edges $\hat v_1\hat x$ and $\hat x\hat v_2$ have total length $|v_1-v_2|_F$,
 we can assume that $\gamma$ runs in a pair of two adjacent triangles, say $[\hat v_1\hat x\hat w_1]$ and $[\hat v_2\hat x\hat w_1]$.
-From above $\gamma$ cross the edge $\hat x\hat w_1$ once.
+From above, $\gamma$ cross the edge $\hat x\hat w_1$ once.
 Denote by $\hat z_1$ and $\hat z_2$ the singular points in the triangles $[\hat v_1\hat x\hat w_1]$ and $[\hat v_2\hat x\hat w_1]$.
 We have the following 4 options: 
 
@@ -800,12 +801,12 @@ in $({*}{*})$.
 
 It shows that $\iota$ does not decrease the distance between $v_1$ and $v_2$;
 the same argument works for $w_1$ and $w_2$.
-Note that in addition we get that two edges $\hat v_1\hat x$ and $\hat x\hat v_2$ form a shortest path in $L$; the same holds for $\hat w_1\hat x$ and $\hat x\hat w_2$.
+In addition, we get that two edges $\hat v_1\hat x$ and $\hat x\hat v_2$ form a shortest path in $L$; the same holds for $\hat w_1\hat x$ and $\hat x\hat w_2$.
 
 Finally, suppose $\gamma$ is a curve from $\hat v_1$ to $\hat w_1$ that is shorter than $|v_1-w_1|_F$.
 From above it does not lie in the triangle $[\hat x\hat v_1\hat w_1]$.
 Recall that $\gamma$ crosses each of four edges $\hat x \hat v_i$ or $\hat x \hat w_i$ at most once.
-Therefore $\gamma$ have to cross edge $\hat x \hat v_2$.
+Therefore, $\gamma$ has to cross edge $\hat x \hat v_2$.
 Since  $\hat v_1\hat x$ and $\hat x\hat v_2$ form a shortest path, we can assume that $\gamma$ visits $\hat x$ and so
 \[\length \gamma\ge |v_1-x|_F+|x-w_1|_F\ge |v_1-w_1|_F\]
 --- a contradiction.
@@ -825,7 +826,7 @@ Further, $(\asterism)$ implies that
 \]
 for any $i$;
 that is, $L$ has convex boundary.
-In particular $L$ has locally nonnegative curvature.
+In particular, $L$ has locally nonnegative curvature.
 It remains to apply the globalization theorem \cite[8.32]{alexander2019alexandrov}. 
 
 \parit{Step 2.}
@@ -887,7 +888,7 @@ Suppose $[\tilde s\tilde w_1 \tilde w_2]$ is a model triangle for $[v_2w_1w_2]$ 
 Then $\ell$ is the perpendicular bisector of $[\tilde v_2, \tilde s]$.
 Since $|\tilde w_i-\tilde v_2|\ge | w_i- v_2|=|\tilde w_i-\tilde s|$ the points $\tilde w_1$ and $\tilde w_2$ lie on the opposite side from $\tilde v_2$ with respect to $\ell$.
 Whence the conditions on $\tilde w_{21}$ and $\tilde w_{22}$ follow.
-In addition, by construction, we get one the identities in $(\asterism)$ with base point $v_2$.
+In addition, by construction, we get one of the identities in $(\asterism)$ with base point $v_2$.
 
 Similarly, we construct the remaining 6 points.
 
@@ -912,7 +913,7 @@ The latter contradicts that $F$ is extreme.
 \end{wrapfigure}
 
 Suppose that two tense triples share two points.
-All possible 4 configurations are shown on the diagram; they will be referred as $C$, $O$, $P$, and $Y$ respectively.
+All possible 4 configurations are shown on the diagram; they will be referred to as $C$, $O$, $P$, and $Y$ respectively.
 Observe that in the configurations $P$ and $Y$, the set $\{a,b,c,d\}$ with center $b$ must be tense.
 Indeed, in the $P$-case the 4-point space is isometric to a 4-point subset on a line with order $a,d,b,c$.
 In the $Y$-case, $\angk{b}{a}{c}=\angk{b}{d}{c}=\pi$, and the comparison implies that $\angk{b}{d}{a}=0$.
@@ -923,17 +924,17 @@ The latter contradicts the assumptions; so $P$ and $Y$ cannot appear in our conf
 
 Let us show that $F$ contains at least 5 tense triples;
 assume $F$ has at most $4$ of them.
-By \ref{clm:10-2k}, the space of quadratic forms on $\RR^4$ contains a subspace $S$ of dimesnion at least 2 such that for any form $U\in S$ for all $t$ sufficiently close to zero, the forms $W+t\cdot U$ satisfy all $\LSS(4)$.
+By \ref{clm:10-2k}, the space of quadratic forms on $\RR^4$ contains a subspace $S$ of dimension at least 2 such that for any form $U\in S$ for all $t$ sufficiently close to zero, the forms $W+t\cdot U$ satisfy all $\LSS(4)$.
 Therefore $F$ is not extremal --- a contradiction.
 
-The remaining part of the proof is a brute force search of all possible configurations that satisfy the conditions above.
-This search is sketched on the following diagram that needs some explanation.
+The remaining part of the proof is a brute-force search of all possible configurations that satisfy the conditions above.
+This search is sketched on the following diagram which needs some explanation.
 \begin{figure}[ht!]
 \centering
 \includegraphics{mppics/pic-210}
 \end{figure}
 We start with a configuration with one triple marked by a solid line.
-Choose a pair that is not in any triple of configuration;
+Choose a pair that is not in any triple of the configuration;
 connect it by a dashed line and search for an extra triple with this pair inside.
 Each time we need to check up to 9 triples that contain the pair --- 3 choices for extra points and 3 choices for the center in the obtained triple.
 Some of them make a $P$ or $Y$ configuration with an existing triple, so they cannot be added.
@@ -1342,7 +1343,7 @@ $D_4$
 \section{Final remarks}
 
 Our theorem provides an affirmative answer to Question~6.2 in \cite{lebedeva-petrunin}.
-For 6-point metric spaces a direct analog of the theorem does not hold,
+For 6-point metric spaces, a direct analog of the theorem does not hold,
 but Question~6.3 in \cite{lebedeva-petrunin} might be an appropriate analog.
 
 An analogous problem for 5-point sets in nonpositively curved spaces was solved by Tetsu Toyoda \cite{toyoda}; another solution is given in \cite{lebedeva-petrunin}.
@@ -1358,7 +1359,7 @@ see  \cite[Question 6.1]{lebedeva-petrunin} and a partial answer in \cite{lebede
 \end{wrapfigure}
 
 The 4-point case is much easier;
-the classification as in \ref{lem:key} gives only two cases on the diagram.
+the classification gives only two cases on the diagram.
 Both admit an embedding into a circle.
 It can be used to prove the following statement.
 
@@ -1366,12 +1367,12 @@ It can be used to prove the following statement.
 
 \begin{thm}{Theorem}
 Any 4-point space satisfying the nonnegative-curvature comparison
-admits an embedding into a product of a circle and the Euclidean space.
+admits an embedding into a product of a circle and Euclidean space.
 \end{thm}
 
 The following statement can be proved in a similar manner.
 
-\begin{thm}{Theorem} Any 4-point space satisfying the nonpositive-curvature comparison admits an embedding into a product of a tripod and the Euclidean space.
+\begin{thm}{Theorem} Any 4-point space satisfying the nonpositive-curvature comparison admits an embedding into a product of a tripod and Euclidean space.
 \end{thm}
 
 These two results are analogous to Wald's theorem mentioned above;
@@ -1384,7 +1385,7 @@ Section~\ref{sec:ext} is the only place where we essentially use that the bound 
 
 It would be interesting to classify 5-point subsets in other classes of spaces;
 for example, in products of circles, or complete flat manifolds.
-It is not hard to see that the second and third types of spaces in \ref{lem:key} do not admit an embedding into a product of circles, so the answer must be different.
+Note that the second and third types of spaces in \ref{lem:key} do not admit an embedding into a product of circles; so the answer must be different.
 We are not aware of 5-point spaces that admit an isometric embedding into a complete nonnegatively curved Riemannian manifold, but not in a flat manifold.
 Analogous questions can be asked about products of trees and Euclidean buildings;
 these are especially nice classes of spaces with nonpositive curvature.
@@ -1395,7 +1396,7 @@ The 5-point tense set can be solved following our argument in \ref{prop:4-tense}
 At the moment we do not see a way to do the 6- and 4-point tense sets.
 
 It might be interesting to find conditions on finite subsets of metric spaces that are related to other curvature bounds as, for example, nonnegative curvature operator or nonnegative isotropic curvature; see \cite[1.19$_+(e)$]{gromov}.
-According to \cite{lebedeva-petrunin-graph-alex}, graph comparison can be used to describe conditions that are stronger that nonnegative or nonpositive in the sense of Alexandov, but nonnegative curvature operator has a chance to be described this way.
+According to \cite{lebedeva-petrunin-graph-alex}, graph comparison can be used to describe conditions that are stronger than nonnegative or nonpositive in the sense of Alexandrov, but nonnegative curvature operator has a chance to be described this way.
 
 \switch{}{
 \section*{Compliance with Ethical Standards}
