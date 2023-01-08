@@ -522,6 +522,7 @@ z.x=(2,2)*u;
 z.v2=(2-1.8,3)*u;
 
 draw z.v1--z.w1--z.x--z.v2;
+draw z.v1--z.v2 dashed  evenly;
 arcs (z.v1,z.w1,z.x,10);
 arcs (z.w1,z.x,z.v2,10);
 
@@ -531,8 +532,8 @@ label.rt(btex $\tilde v_1$ etex, z.v1);
 label.lft(btex $\tilde w_1$ etex, z.w1);
 label.rt(btex $\tilde x$ etex, z.x);
 label.lft(btex $\tilde v_2$ etex, z.v2);
-label.rt(btex $=\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_1}$ etex, z.w1+(10,0));
-label.lft(btex $\measuredangle \hinge {\hat x}{\hat v_2}{\hat w_1}=$ etex, z.x+(-10,0));
+whitelabel.rt(btex $=\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_1}$ etex, z.w1+(10,0));
+whitelabel.lft(btex $\measuredangle \hinge {\hat x}{\hat v_2}{\hat w_1}=$ etex, z.x+(-10,0));
 endfig;
 
 beginfig(207)
@@ -541,10 +542,18 @@ path p[];
 u:=.5cm;
 picture s[];
 
-s1= image(draw circle(origin,u);
-dOt (0,1)*u, (0,1)*u rotated 72, (0,1)*u rotated -72, (0,1)*u rotated 144, (0,1)*u rotated -144;);
+s1= image(
+draw circle(origin,u);
+dOt (0,1)*u, (0,1)*u rotated 72, (0,1)*u rotated -72, (0,1)*u rotated 144, (0,1)*u rotated -144;
+label.top(btex $x_1$ etex, (0,1)*u);
+label.lft(btex $x_2$ etex, (0,1)*u rotated 72);
+label.llft(btex $x_3$ etex, (0,1)*u rotated 72 rotated 72);
+label.lrt(btex $x_4$ etex, (0,1)*u rotated 72 rotated 72 rotated 72);
+label.rt(btex $x_5$ etex, (0,1)*u rotated 72 rotated 72 rotated 72 rotated 72);
+);
 
 draw s1;
+
 endfig;
 
 beginfig(209)
@@ -1575,13 +1584,15 @@ p1=circle(origin,sqrt(abs(z.x1)**2+h**2)) rotated angle(z.x1-z.x3) shifted z.x1 
 draw z.x1--z.x2--z.x3--cycle;
 draw p1 cutafter (z.x1--z.x1+3*(z.x1-z.x2)) pensemibold;
 
-dOt z.x1,z.x2, z.x3, z.p;
+z.q1=point .7 of p1;
+dOt z.x1,z.x2, z.x3, z.p, z.q1;
 
 label.top(btex $x_1$ etex, z.x1);
 label.rt(btex $x_2$ etex, z.x2);
 label.lft(btex $x_3$ etex, z.x3);
 label.rt(btex $p$ etex, z.p);
-label.top(btex $\Gamma_1$ etex, point .2 of p1);
+label.top(btex $\Gamma_1$ etex, point .1 of p1);
+label.top(btex $q_1$ etex, z.q1);
 endfig;
 
 beginfig(510)
@@ -1726,4 +1737,21 @@ label.bot(btex $\tilde x_2$ etex, z.x2);
 label.rt(btex $\tilde x_3$ etex, z.x3);
 endfig;
 
+beginfig(550)
+save u,p;
+path p[];
+u:=.3cm;
+
+z.l=(0,0)*u;
+z.r=(5,0)*u;
+z.d=(1,0)*u;
+
+draw z.l-3.141592*z.d--z.r+3.141592*z.d penhair;
+draw z.l--z.r penbold;
+draw z.r+z.d zscaled (0,2){1,0}..{-1,0}z.r-z.d zscaled (0,2)--z.l-z.d zscaled (0,2){-1,0}..{1,0}z.l+z.d zscaled (0,2)--cycle;
+
+label.rt(btex $V$ etex, z.r+3.141592*z.d);
+label.top(btex $V'$ etex, .5[z.l,z.r]);
+label.top(btex $W'$ etex, .5[z.l,z.r]+z.d zscaled (0,2));
+endfig;
 end
