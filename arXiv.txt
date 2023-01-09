@@ -5,6 +5,7 @@ quad.sty
 mppics/pic-200.eps
 mppics/pic-202.eps
 mppics/pic-203.eps
+mppics/pic-206.eps
 mppics/pic-207.eps
 mppics/pic-209.eps
 mppics/pic-210.eps
@@ -31,7 +32,9 @@ mppics/pic-353.eps
 mppics/pic-354.eps
 mppics/pic-401.eps
 mppics/pic-501.eps
+mppics/pic-506.eps
 mppics/pic-510.eps
 mppics/pic-520.eps
 mppics/pic-530.eps
 mppics/pic-540.eps
+mppics/pic-550.eps
