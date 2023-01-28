@@ -38,7 +38,7 @@ pdfauthor={Nina Lebedeva and Anton Petrunin}}
 \date{}
 \maketitle
 \begin{abstract}
-We give an if-and-only-if condition on a five-point metric spaces that admit embeddings into nonnegatively curved Riemannian manifolds.
+We give an if-and-only-if condition on five-point metric spaces that admit isometric embeddings into complete nonnegatively curved Riemannian manifolds.
 \end{abstract}
 
 %\let\thefootnote\relax\footnote{\textbf{Keywords:} CBB(0), finite metric space, comparison inequality, Alexandrov comparison, Lang--Schroeder--Sturm inequality.}
@@ -46,20 +46,21 @@ We give an if-and-only-if condition on a five-point metric spaces that admit emb
 
 \section{Introduction}
 
-Toponogov theorem provides an if-and-only-if condition on a metric on four-point space that admits an isometric embedding into a nonnegatively curved Riemannian manifold.
+Toponogov theorem provides an if-and-only-if condition on a metric on four-point space that admits an isometric embedding into a complete nonnegatively curved Riemannian manifold.
 The only-if part is proved by Victor Toponogov, and the if part follows from a result of Abraham Wald \cite[\S 7]{wald}.
 
 We show that the so-called Lang--Schroeder--Sturm inequality is the analogous condition for five-point spaces.
+ 
 The only-if part is well-known, but the if part is new.
-It was hard to imagine some new restrictions, but now we know there are none.
+It was hard to imagine some new restrictions on five-point sets, but now we know there are none.
 
-Let us formulate the Lang--Schroeder--Sturm inequality \cite{lang-schroeder, sturm}.
+Let us formulate the Lang--Schroeder--Sturm inequality.
 Consider an $(n+1)$-point array $(p,x_1,\dots x_n)$ in a metric space $X$.
 We say that the array satisfies Lang--Schroeder--Sturm inequality with center $p$
 if for any nonnegative values $\lambda_1,\dots,\lambda_n$ we have
 \[\sum_{i,j}a_{ij}\cdot \lambda_i\cdot\lambda_j\ge 0,\]
 where $a_{ij}=|p-x_i|_X^2+|p-x_j|_X^2-|x_i-x_j|_X^2$
-and we denote by $|p-q|_X$ the distance between points in $X$.
+and we denote by $|\ -\ |_X$ the distance between points in $X$.
 
 Recall that any point array in a  complete nonnegatively curved Riemannian manifold (and, more generally, in any nonnegatively curved Alexandrov space) meets the Lang--Schroeder--Sturm inequality \cite{lang-schroeder, sturm}.
 In particular, 
@@ -72,19 +73,26 @@ A five-point metric space $F$ admits an isometric embedding into a complete nonn
 if and only if all Lang--Schroeder--Sturm inequalities hold in $F$.
 \end{thm}
 
-We already know that Lang--Schroeder--Sturm inequalities are necessary.
-It remains to construct a complete nonnegatively curved Riemannian manifold that contains an isometric copy of any given 5-point space satisfying the assumptions.
-We first construct an Alexandrov space with this property and then smooth it slightly keeping the required property.
+\begin{wrapfigure}{r}{15mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-5}
+\end{wrapfigure}
+
+In the next section, we will give a reformulation of the theorem using the so-called \emph{(4+1)-point comparison} \cite{alexander2019alexandrov,AKP-Kirszbraun} which is also equivalent to \emph{graph comparison} \cite{lebedeva-petrunin-zolotov} for the star graph shown on the diagram.
+
+Since we know that Lang--Schroeder--Sturm inequalities are necessary,
+it remains to construct a complete nonnegatively curved Riemannian manifold that contains an isometric copy of a given 5-point space satisfying the assumptions.
 
 Our proof uses a brute-force search that was originally done on a computer.
 We present a hand-made proof that was found later.
 It is still based on brute-force search, and we hope that a more conceptual proof will be found.
-Our paper is inspired by an unpublished note of Vladimir Zolotov and the first author;
+Our paper is inspired by the note of Vladimir Zolotov and the first author \cite{lebedeva-zolotov};
 the results from this note are discussed briefly in the last section.
 
 \parbf{Acknowledgments.}
 We want to thank Arseniy Akopyan and Alexander Gil for helping us with programming.
-We would also like to thank Tetsu Toyoda and the anonymous referee for pointing out errors and misprints in the preliminary version.
+We would also like to thank Tadashi Fujioka and Tetsu Toyoda for pointing out errors and misprints in the preliminary version.
 The first author was partially supported by Russian Foundation for Basic Research grant 20-01-00070; 
 the second author was partially supported by National Science Foundation grant DMS-2005279.
 
@@ -104,19 +112,23 @@ there is an array $\tilde p,\tilde x_1,\dots,\tilde x_n$ in a Hilbert space $\HH
 for all $i$ and $j$.
 Point $p$ will be called the \emph{center} of comparison.
 
+Let us denote by $S_n$ the star graph of order $n$;
+one central vertex in $S_n$ is connected to the remaining $n$.
+It is easy to see that (\textit{n}+1)-comparison is equivalent to the $S_n$-comparison --- a particular type of graph comparison introduced in \cite{lebedeva-petrunin-zolotov}.
+
 For general metric spaces, the (\textit{n}+1)-comparison implies the Lang--Schroeder--Sturm inequality,  briefly $\LSS(n)$.
 For $n\ge 5$ the converse does not hold \cite[Section 8]{lebedeva-petrunin-zolotov}.
 In this section, we will show that these two conditions are equivalent for $n\le 4$.
 
 \begin{thm}{Claim}\label{clm:(4+1)=LSS(4)}
 For any 5-point array $p,x_1,\dots,x_4$, the
-$\LSS(4)$-inequality is equivalent to $(4+1)$-comparison.
+$\LSS(4)$-inequality is equivalent to the $(4+1)$-comparison.
 \end{thm}
 
 Applying the claim, we get the following reformulation of the main theorem.
 
 \begin{thm}{Reformulation}\label{thm:main-(4+1)}
-A five-point metric space $F$ admits an isometric embedding into an Alexandrov space with nonnegative curvature
+A five-point metric space $F$ admits an isometric embedding into a complete Riemannian manifold with nonnegative curvature
 if and only if it satisfies (4+1)-comparison for all relabelings.
 \end{thm}
 
@@ -199,7 +211,7 @@ the \emph{associated} form to the point array $\bm{x}$.
 The following claim is self-evident:
 
 \begin{thm}{Claim}\label{clm:W>=0}
-An array $\bm{x}=(x_1,\dots,x_n)$ with a metric is isometric to an array in a Euclidean space if and only if 
+An array $\bm{x}=(x_1,\dots,x_n)$ with a (semi)metric is isometric to an array in a Euclidean space if and only if 
 $W_{\bm{x}}(v)\ge 0$
 for any $v\in \RR^{n-1}$.
 \end{thm}
@@ -276,7 +288,7 @@ Let $(p,x,y,z)$ be a tense 4-point array.
 Then there is an isometric comparison configuration $(\tilde p,\tilde x,\tilde y,\tilde z)$ with $\tilde p$ lying in the solid triangle $\tilde x\tilde y\tilde z$.
 Suppose all points $p$, $x$, $y$, and $z$ are distinct.
 If $\tilde p$ lies in the interior of the solid triangle or the triangle is degenerate, then the array $(\tilde p,\tilde x,\tilde y,\tilde z)$ is nondegenerate.
-Otherwise, if $\tilde p$ lies on a side, say $[\tilde x,\tilde y]$ and the triangle $[\tilde x\tilde y\tilde z]$ is nondegenerate, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
+Otherwise, if $\tilde p$ lies on a side, say $[\tilde x,\tilde y]$, and the triangle $[\tilde x\tilde y\tilde z]$ is nondegenerate, then $(\tilde p,\tilde x,\tilde y,\tilde z)$ is degenerate.
 In the latter case, the 3-point array $(\tilde p,\tilde x,\tilde y)$ is tense and nondegenerate.
 
 \begin{thm}{Claim}\label{clm:10-2k}
@@ -305,13 +317,11 @@ for any $w\in K_5$.
 Note that for some $w\in K_5$, we have equality in $({*}{*})$.
 The metric on $\bm{x}$ that corresponds to the form $W_{\bm{x}}+U+t\cdot I$ satisfies all $\LSS(4)$ inequalities and
 by \ref{clm:nondeg-tense}, it has a tense array with at least 3 points.
-However, since $t>0$, it has no 3-point tense arrays.
 
 Choose an array $Q$ that remains to be tense as $U\to 0$. 
 Note that $Q$ is isometric to an array in Euclidean space.
 Since $W_{\bm{x}}+U+t\cdot I\to W_{\bm{x}}$ as $U\to 0$, the array $Q$ must contain one of the three-point tense arrays for the original metric.
-That is, one of the three-point arrays sits in a four-point array that is isometric to an array in Euclidean space.
-It follows that there is a degenerate 4-point array for the original metric
+The latter is impossible since $t>0$
 --- a contradiction.
 \qeds
 
@@ -334,7 +344,7 @@ The extremal points of $\mathcal{B}_5'$ correspond to extremal rays of $\mathcal
 metrics on extremal rays will be called \emph{extremal}.
 Note that if an extremal metric $\rho$ lies in the interior of a line segment between metrics $\rho'$ and $\rho''$ in $\mathcal{B}_5$, then both metrics $\rho'$ and $\rho''$ are proportional to $\rho$.
 
-Since Lang--Schroeder--Sturm inequalities are necessary for the existence of isometric embedding into a nonnegatively curved Riemannian manifold,
+Since Lang--Schroeder--Sturm inequalities are necessary for the existence of isometric embedding into a complete nonnegatively curved Riemannian manifold,
 we have that 
 \[\mathcal{A}_5\subset\mathcal{B}_5.\]
 To prove the theorem we need to show that the opposite inclusion holds as well.
@@ -346,15 +356,14 @@ Given an extremal space $F$ in $\mathcal{B}_5$, there is a complete nonnegativel
 
 \parit{Proof.}
 Note that any extremal space  $F$ contains a tense set.
-If not, then an arbitrary slight change of metric keeps it in $\mathcal{B}_5$;
-the latter is impossible for an extremal metric.
+If not, then an arbitrary slight change of metric keeps it in $\mathcal{B}_5$ which is impossible for an extremal metric.
 
 The remaining part of the proof is broken into cases:
 \begin{itemize}
 \item $F$ contains a 5-point tense set.
 In this case, $F$ admits an isometric embedding into Euclidean space --- the problem is solved.
 \item $F$ contains a 4-point  tense set.
-This case follows from in Proposition~\ref{prop:4-tense} below.
+This case follows from Proposition~\ref{prop:4-tense} below.
 \item $F$ contains only 3-point  tense sets. This is the hardest part of the proof; it follows from Proposition~\ref{prop:3-tense}.
 \qeds
 \end{itemize}
@@ -398,12 +407,6 @@ Further, let us show that there are points $\tilde q_1$, $\tilde q_2$, $\tilde q
 \leqno({*}{*})\]
 hold for all $i$ and $j$.
 
-\begin{wrapfigure}{r}{30mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-506}
-\end{wrapfigure}
-
 By these conditions, $\tilde q_1$ must lie on the circle with the center at $x_1$ and radius $|x_1-q|_F$.
 Denote by $\Gamma_1$ the intersection of this circle with the angle vertical to the hinge $\hinge{\tilde x_1}{\tilde x_2}{\tilde x_3}$.
 Let us show that $\tilde q_1$ can be chosen on $\Gamma_1$.
@@ -413,6 +416,12 @@ The point $\tilde q_1$ has to satisfy additional three conditions:
 \measuredangle\hinge{\tilde x_1}{\tilde p}{\tilde q_1}\ge \angk{x_1}{p}{q}\]
 for $i\ne 1$.
 Each condition describes a subarc of $\Gamma_1$, say $\breve{X}_{1,2}$, $\breve{X}_{1,3}$, and $\breve{P}_{1}$.
+
+\begin{wrapfigure}[5]{r}{30mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-506}
+\end{wrapfigure}
 
 By the construction and comparison we have 
 \begin{align*}
@@ -565,7 +574,7 @@ For example, the given diagram corresponds to a metric on $\{a,b,c,d,e\}$ with f
 
 }
 
-\begin{thm}{Key lemma}\label{lem:key}
+\begin{thm}{Classification lemma}\label{lem:key}
 Let $F$ be an extremal 5-point metric space; suppose that it has no tense subsets with 4 and 5 points.
 Then $F$ has one of three configurations of tense sets shown on the diagram.
 
@@ -573,7 +582,7 @@ In other words, the points in $F$ can be labeled by $\{a,b,c,d,e\}$ so that it h
 one of the following three tense-set configurations:
 
 \begin{wrapfigure}{r}{50mm}
-\vskip3mm
+\vskip2mm
 \centering
 \includegraphics{mppics/pic-202}
 \end{wrapfigure}
@@ -589,9 +598,9 @@ one of the following three tense-set configurations:
 \end{thm}
 
 In the following proof, we use only a small part of this classification.
-Namely, we use that if it is either the first case or there are two tense sets with a shared center ($bed$ and $cea$).  
+Namely, we use that it is either the first case (the cycle) or there are two tense sets with a shared center ($bed$ and $cea$).  
 However, the proof of this \emph{small part} takes nearly as long as the complete classification.
-(One can exclude cases 11, 12 and 16 from the diagram on page \pageref{pic-210}.) 
+(We could exclude cases 11, 12 and 16 on page \pageref{pic-210}, but we decided to keep them.) 
 
 \begin{wrapfigure}{r}{20mm}
 \vskip-6mm
@@ -607,7 +616,7 @@ for any $i\pmod 5$.
 In this case, $F$ is isometric to a 5-point subset in the circle of length 
 $\ell=|x_1-x_2|_F+\dots+|x_4-x_5|_F+|x_5-x_1|_F$.
 
-Now, by the key lemma, we can assume that two tense triples in $F$ have a common center.
+Now, by the classification lemma, we can assume that two tense triples in $F$ have a common center.
 Let us relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2$ and $w_1xw_2$.
 
 \begin{wrapfigure}{r}{25mm}
@@ -616,7 +625,7 @@ Let us relabel $F$ by $x,v_1,v_2,w_1,w_2$ so that $F$ has tense triples $v_1xv_2
 \includegraphics{mppics/pic-209}
 \end{wrapfigure}
 
-We will construct an Alexandrov space $L$ --- a flat disc with at most four singular points.
+First, we will construct an Alexandrov space $L$ --- a flat disc with at most four singular points.
 The disc $L$ will be triangulated by four triangles with vertices $\hat x$, $\hat v_1$, $\hat v_2$, $\hat w_1$, $\hat w_2$ as shown on the diagram.
 Each of the four triangles has at most one singular point;
 in other words, each triangle is a solid geodesic triangle in a cone.
@@ -629,7 +638,8 @@ By construction, $\iota$ is distance-nonexpanding; therefore we only need to sho
 This part is divided into two steps.
 
 \parit{Step 1.}
-In this step, we describe three groups of conditions on these 12 angles; show that together they guarantee that $L$ has nonnegative curvature in the sense of Alexandrov and $\iota$ is distance-noncontracting.
+In this step, we describe three groups of conditions on these 12 angles;
+we show that together they guarantee that $L$ has nonnegative curvature in the sense of Alexandrov, and $\iota$ is distance-noncontracting.
 
 First, we need to assume that the 12 angles of the triangles are at least as large as the corresponding model angles;
 that is,
@@ -838,6 +848,7 @@ for any $i$;
 that is, $L$ has convex boundary.
 In particular, $L$ has locally nonnegative curvature.
 It remains to apply the globalization theorem \cite[8.32]{alexander2019alexandrov}. 
+(Instead, one may also apply the characterization of nonnegatively curved polyhedral spaces \cite[12.5]{alexander2019alexandrov}.)
 
 \parit{Step 2.}
 In this step we show that the 12 angles can be chosen so that they meet all the conditions $({*})$, $({*}{*})$, and $(\asterism)$.
@@ -889,7 +900,7 @@ The conditions $({*})$, and $({*}{*})$ will follow if we could choose the points
 here we assume that $j'\ne j$, so $2'=1$ and $1'=2$.
 
 \begin{wrapfigure}{r}{33mm}
-\vskip4mm
+\vskip-8mm
 \centering
 \includegraphics{mppics/pic-255}
 \end{wrapfigure}
@@ -925,7 +936,7 @@ The latter contradicts that $F$ is extreme.
 
 Suppose that two tense triples share two points.
 All possible 4 configurations are shown on the diagram; they will be referred to as $C$, $O$, $P$, and $Y$ respectively.
-Observe that in the configurations $P$ and $Y$, the set $\{a,b,c,d\}$ with center $b$ must be tense.
+Observe that in the configurations $P$ and $Y$, the set $\{a,b,c,d\}$ must be tense with center at~$b$.
 Indeed, in the $P$-case the 4-point space is isometric to a 4-point subset on a line with order $a,d,b,c$.
 In the $Y$-case, $\angk{b}{a}{c}=\angk{b}{d}{c}=\pi$, and the comparison implies that $\angk{b}{d}{a}=0$.
 Without loss of generality we may assume $|a-b|\ge |d-b|$;
@@ -1387,7 +1398,7 @@ The following statement can be proved in a similar manner.
 \end{thm}
 
 These two results are analogous to Wald's theorem mentioned in the introduction;
-they were obtained in an unpublished note by Vladimir Zolotov and the first author.
+they were obtained in the note by Vladimir Zolotov and the first author~\cite{lebedeva-zolotov}.
 
 \medskip
 
@@ -1396,7 +1407,7 @@ Section~\ref{sec:ext} is the only place where we essentially use that the bound 
 
 It would be interesting to classify 5-point subsets in other classes of spaces;
 for example, in products of circles, or complete flat manifolds.
-Note that the second and third types of spaces in \ref{lem:key} do not admit an embedding into a product of circles; so the answer must be different.
+Note that the second and third types of spaces in the classification lemma (\ref{lem:key}) do not admit an embedding into a product of circles; so the answer must be different.
 We are not aware of 5-point spaces that admit an isometric embedding into a complete nonnegatively curved Riemannian manifold, but not in a complete flat manifold.
 Analogous questions can be asked about products of trees and Euclidean buildings;
 these are especially nice classes of spaces with nonpositive curvature.

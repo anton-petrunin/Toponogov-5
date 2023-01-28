@@ -17,7 +17,22 @@ linecap:=butt;
 %filenametemplate "%j-%1c.svg";
 outputformat := "eps";
 
+beginfig(5) 
+save u;
+u:=.5cm;
 
+z0=origin;
+z1=(0,1)*u;
+z2=z1 rotated 90;
+z3=-z1;
+z4=-z2;
+
+draw z1--z3;
+draw z2--z4;
+
+dOt z0,z1,z2,z3,z4;
+
+endfig;
 
 beginfig(10) 
 save u;
@@ -532,8 +547,8 @@ label.rt(btex $\tilde v_1$ etex, z.v1);
 label.lft(btex $\tilde w_1$ etex, z.w1);
 label.rt(btex $\tilde x$ etex, z.x);
 label.lft(btex $\tilde v_2$ etex, z.v2);
-whitelabel.rt(btex $=\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_1}$ etex, z.w1+(10,0));
-whitelabel.lft(btex $\measuredangle \hinge {\hat x}{\hat v_2}{\hat w_1}=$ etex, z.x+(-10,0));
+whitelabel.rt(btex $=\measuredangle \hinge {\hat w_1}{\hat x}{\hat v_1}$ etex, z.w1+(10,3));
+whitelabel.lft(btex $\measuredangle \hinge {\hat x}{\hat v_2}{\hat w_1}=$ etex, z.x+(-10,3));
 endfig;
 
 beginfig(207)
@@ -902,6 +917,10 @@ draw z.w1--z.w2;
 draw z.w1--z.s--z.w2 dashed evenly;
 draw z.l--z.r  dashed linedot;
 draw z.w21--z.v2--z.w22;
+draw z.s--z.v2 dashed evenly penhair;
+mark_rt_angle(z.s, .5[z.s,z.v2], z.r) penhair;
+rimmark(z.s--.5[z.s,z.v2]);
+rimmark(z.v2--.5[z.s,z.v2]);
 
 dOt z.x, z.v1, z.v2, z.w1, z.w2, z.s, z.w21, z.w22;
 
@@ -1510,9 +1529,9 @@ u:=1cm;
 picture s[];
 
 z1=(0,0)*u;
-z2=(1,0)*u;
-z3=(1,1)*u;
-z4=(0,1)*u;
+z3=(1,0)*u;
+z2=z3 rotated 60;
+z4=(z1+z2+z3)/3;
 z.shift=(2.5,0)*u;
 
 s0=image(
@@ -1580,14 +1599,17 @@ z.x2=(1,-.5)*u;
 z.x3=(-1,-.5)*u;
 z.p=(0,-.1)*u;
 p1=circle(origin,sqrt(abs(z.x1)**2+h**2)) rotated angle(z.x1-z.x3) shifted z.x1 ;
+z.e=unitvector(z.x1-z.x3)*sqrt(abs(z.x1)**2+h**2);
+z.ee=unitvector(z.x1-z.x2)*sqrt(abs(z.x1)**2+h**2);
 
 draw z.x1--z.x2--z.x3--cycle;
 draw p1 cutafter (z.x1--z.x1+3*(z.x1-z.x2)) pensemibold;
+draw z.e+z.x1--z.x1--z.ee+z.x1 dashed evenly;
 
 z.q1=point .7 of p1;
 dOt z.x1,z.x2, z.x3, z.p, z.q1;
 
-label.top(btex $x_1$ etex, z.x1);
+whitelabel.top(btex $x_1$ etex, z.x1+(0,1));
 label.rt(btex $x_2$ etex, z.x2);
 label.lft(btex $x_3$ etex, z.x3);
 label.rt(btex $p$ etex, z.p);
