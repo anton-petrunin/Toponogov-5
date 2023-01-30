@@ -31,6 +31,7 @@ mppics/pic-352.eps
 mppics/pic-353.eps
 mppics/pic-354.eps
 mppics/pic-401.eps
+mppics/pic-5.eps
 mppics/pic-501.eps
 mppics/pic-506.eps
 mppics/pic-510.eps
